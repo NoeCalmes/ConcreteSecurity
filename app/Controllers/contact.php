@@ -10,4 +10,15 @@ class contact extends BaseController
             . view('/contact/contact')
             . view('/template/footer');
     }
+
+
+
+
+
+
+
+
+
+
+    
 }
