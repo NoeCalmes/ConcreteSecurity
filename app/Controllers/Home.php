@@ -10,4 +10,5 @@ class Home extends BaseController
             . view('/home/acceuil')
             . view('/template/footer');
     }
+    
 }
