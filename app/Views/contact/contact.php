@@ -14,6 +14,7 @@
       <span class="big-circle"></span>
      <h1> TEST </h1>
      <h2>JE SUIS PAS D ACCORD AVEC TON CODE</h2>
+     <h2>ERROR INCOMING</h2>
       <div class="form">
         <div class="contact-info">
           <h3 class="title">Prenons contact</h3>
