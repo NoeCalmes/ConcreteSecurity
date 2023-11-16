@@ -12,7 +12,7 @@
 <img src="<?= base_url('public/img/acceuil/logo.svg') ?>" alt="" class="logo" id="logo">
 
 
-
+<h1> Bienvenue sur L'admin Panel , (Admin Name) </h1>
 
 <nav class="MainNav">
     <div>
