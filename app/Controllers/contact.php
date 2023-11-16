@@ -8,19 +8,6 @@ class contact extends BaseController
     {
         return view('/template/navbar')
             . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
-            . view('/contact/contact')
             . view('/template/footer');
     }
 }

@@ -1,0 +1,81 @@
+CRITICAL - 2023-11-14 16:30:41 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:46 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:47 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:47 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:48 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:48 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:48 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:48 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-14 16:30:48 --> Invalid file: "/admin/ooterAdmin.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/admin/ooterAdmin.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/admin/ooterAdmin', [], true)
+ 3 APPPATH\Controllers\PanelAdmin.php(11): view('/admin/ooterAdmin')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PanelAdmin->getindex()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PanelAdmin))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(80): CodeIgniter\CodeIgniter->run()
