@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Demande extends Model
+{
+    public $timestamps = false;
+
+    public function client() {
+        return $this->belongsTo('App\Models\Client');
+    }
+
+    public function prestation() {
+        return $this->belongsToMany('App\Models\Prestation')->withPivot('demande_id','prestation_id', 'date_debut', 'date_fin', 'adresse', 'ville', 'cp', 'commentaire');
+    }
+}
