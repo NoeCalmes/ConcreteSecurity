@@ -54,6 +54,62 @@
     height: 70px;
 }
 
-.nav .list-contrat .arrow {
-   
+
+body.paneladmin {
+    background-color: #b4b4b4;
 }
+
+
+.container-acceuil .Title h1{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container-acceuil .border-title{
+    width: 400px;
+    height: 5px;
+    background-color: black;
+    display: flex;
+    margin: 5px 0px 0px 20px;
+    border-radius: 100%;
+}
+
+.container-acceuil .Content h2{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container-acceuil .Content{
+    background-color: #d6d6d6;
+    border-radius: 40px;
+    height: 50%;
+    margin: 0px 20px 0px 20px;
+}
+
+.container-acceuil .border-title-content {
+    width: 280px;
+    height: 2px;
+    background-color: black;
+    margin: 5px 0px 50px 20px;
+}
+
+.container-acceuil .Content .Texte{
+    background-color: #c0c0c0;
+margin: auto;
+    justify-content: center;
+    border-radius: 20px;
+    height: 100px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-acceuil .Content txt{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
