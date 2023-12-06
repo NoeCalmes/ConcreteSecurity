@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('public/css/StyleAdmin.css') ?>">
 
 <div class="nav-project">
+    
     <div class="header-nav">
         <img src="<?= base_url('public/img/acceuil/logo.svg') ?>" alt="" class="logo" id="logo">
         <div class="border"></div>
