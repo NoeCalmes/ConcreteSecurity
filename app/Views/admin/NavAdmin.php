@@ -9,7 +9,8 @@
 
 <div class="nav-project">
     <div class="header-nav">
-        <img src="<?= base_url('public/img/acceuil/logo.png') ?>" alt="" class="logo" id="logo">
+        <img src="<?= base_url('public/img/acceuil/logo.svg') ?>" alt="" class="logo" id="logo">
+        <div class="border"></div>
         <h1> Bienvenue sur L'admin Panel , (Admin Name) </h1>
     </div>
 
