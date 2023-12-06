@@ -8,7 +8,7 @@ class Client extends Model
 {
     public $timestamps = false;
 
-    public function demande() {
+    public function demandes() {
         return $this->hasMany('App\Models\Demande');
     }
 }
