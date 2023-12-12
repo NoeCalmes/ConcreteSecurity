@@ -1,129 +1,146 @@
-*{
+* {
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
     font-family: 'Mulish';
-  
-  }
-  
-  .nav-project {
-      background-color: white;
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  }
-  
-  
-  .header-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  }
-  
-  .header-nav img {
-      margin: 10px 0px 10px 10px;
-  }
-  
-  .header-nav h1 {
-      color: #01313f;
-      margin-left: -50px;
-      font-size:28px;
-  }
-  .header-nav .border {
-    background-color: #01313f;
-    height:60px ;
-    width: 2px;
-    position: absolute;
-    left: 35.8%;
 
-  }
-  
-  .nav {
-      width: 100%;
-      height: 80px;
-      background-color: #E2E2E2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .nav a {
-      color: black;
-      font-size: 20px;
-      background-color: white;
-      width: 100%;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius:8px;
-  }
-  
-  .nav .list-contrat {
-      margin: 0px 10px 0px 10px;
-      border-radius:10px;
-      width: 100%;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  
-  body.paneladmin {
-      background-color: white;
-  }
-  
-  
-  .container-acceuil .Title h1{
-      margin-top: 20px;
-      margin-left: 20px;
-  }
-  
-  .container-acceuil .border-title{
-      width: 400px;
-      height: 5px;
-      background-color: black;
-      display: flex;
-      margin: 5px 0px 0px 20px;
-      border-radius: 100%;
-  }
-  
-  .container-acceuil .Content h2{
-      margin-top: 20px;
-      margin-left: 20px;
-  }
-  
-  .container-acceuil .Content{
-      background-color: #d6d6d6;
-      border-radius: 40px;
-      height: 50%;
-      margin: 0px 20px 0px 20px;
-  }
-  
-  .container-acceuil .border-title-content {
-      width: 280px;
-      height: 2px;
-      background-color: black;
-      margin: 5px 0px 50px 20px;
-  }
-  
-  .container-acceuil .Content .Texte{
-      background-color: #c0c0c0;
-  margin: auto;
-      justify-content: center;
-      border-radius: 20px;
-      height: 100px;
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  
-  .container-acceuil .Content txt{
-      margin-left: 20px;
-      font-size: 20px;
-      font-weight: 800;
-  
-  }
+}
+
+.nav-project {
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.logo {
+    width: 140px;
+    
+}
+
+
+.header-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.header-nav img {
+    margin: 10px 0px 10px 10px;
+}
+
+.header-nav h1 {
+    color: #01313f;
+    margin-left: -50px;
+    font-size: 28px;
+}
+
+.header-nav .border {
+    background-color: #01313f;
+    height: 60px;
+    width: 2px;
+    margin-left: 10px;
+    margin-right: 60px;
+
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    background-color: #01313f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a {
+    color: #01313f;
+    font-size: 20px;
+    font-weight:600;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.nav .list-contrat {
+    margin: 0px 10px 0px 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body.paneladmin {
+    background-color: white;
+}
+
+
+.container-acceuil .Title h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.container-acceuil .border-title {
+    width: 400px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0px 0px 27px;
+    border-radius: 10px;
+}
+
+.container-acceuil .Content h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container-acceuil .Content {
+    margin:50px 0px 0px 10px;
+}
+
+.container-acceuil .Content h3 {
+    margin-top: 10px;
+    width: 98%;
+}
+.container-acceuil .border-title-content {
+    width: 280px;
+    height: 2px;
+    background-color: black;
+    margin: 5px 0px 50px 20px;
+}
+
+
+
+
+.container-acceuil .Content h3 {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.container-acceuil {
+    height: 400px;
+}
+.footer-admin {
+    position: absolute;
+    width: 100%; height: 50px;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #01313f;
+    height: 50px;
+    width: 100%;
+}
+
+.footer-admin a {
+    cursor: pointer;
+margin-left: 20px;
+color: white;
+}

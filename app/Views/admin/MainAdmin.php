@@ -8,7 +8,7 @@
         <div class="Content">
             <h2>Concernant L'entreprise</h2>
             <div class="Texte">
-                <txt>- Une sortie avec les Employés de l'entreprise sera organisée prochainement afin d'assurer une cohésion d'équipe en cette nouvelle année. L'actvité principale de cette sortie sera le Padel !</txt>
+                <h3>Une sortie avec les Employés de l'entreprise sera organisée prochainement afin d'assurer une cohésion d'équipe en cette nouvelle année. L'actvité principale de cette sortie sera le Padel !</h3>
             </div>
         </div>
     </div>
