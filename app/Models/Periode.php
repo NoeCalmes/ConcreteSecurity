@@ -8,7 +8,7 @@ class Periode extends Model
 {
     public $timestamps = false;
 
-    public function contrat() {
+    public function contrats() {
         return $this->hasMany('App\Models\Contrat');
     }
 }

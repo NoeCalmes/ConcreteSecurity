@@ -13,6 +13,6 @@ class Demande extends Model
     }
 
     public function prestations() {
-        return $this->belongsToMany('App\Models\Prestation')->withPivot('demande_id','prestation_id', 'date_debut', 'date_fin', 'adresse', 'ville', 'cp', 'commentaire');
+        return $this->belongsToMany('App\Models\Prestation')->withPivot('date_debut', 'date_fin', 'adresse', 'ville', 'cp', 'commentaire');
     }
 }
