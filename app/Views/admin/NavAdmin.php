@@ -18,7 +18,7 @@
 
     <div class="nav">
         <div class="list-contrat">
-            <a href="#" class="navbar">Accueil</a>
+            <a href="PanelAdmin/contrat" class="navbar">Accueil</a>
         </div>
         <div class="list-contrat">
             <a href="#" class="navbar">Contrat</a>
