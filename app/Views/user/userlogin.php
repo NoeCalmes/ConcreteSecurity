@@ -13,13 +13,14 @@
 	<!-- <h2></h2> -->
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="#">
-				<h1 class="compte">Créé un compte</h1>
-				<input type="text" placeholder="Nom" />
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Mot de passe" />
-				<button class="inscrire">S'incrire</button>
+			<form action="<?php echo base_url('user/createaccount'); ?>" method="post">
+				<h1 class="compte">Créer un compte</h1>
+				<input type="text" name="nom-user" placeholder="Nom" />
+				<input type="email" name="email-user" placeholder="Email" />
+				<input type="password" name="mdp-user" placeholder="Mot de passe" />
+				<button type="submit" class="inscrire">S'inscrire</button>
 			</form>
+
 		</div>
 		<div class="form-container sign-in-container">
 			<form action="#">
@@ -41,6 +42,7 @@
 					<h1 class="noir">Bienvenue mon ami !</h1>
 					<p class="noir">Entrez vos informations personnelles et commencez à créer votre compte</p>
 					<button class="ghost lop" id="signUp">Créé un compte</button>
+
 				</div>
 			</div>
 		</div>
@@ -49,50 +51,49 @@
 </article>
 
 <style>
+	/* Scroll bar debut */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
 
-/* Scroll bar debut */
-::-webkit-scrollbar {
-    width: 10px;
-}
+	::-webkit-scrollbar-thumb {
+		background-color: #888;
+		border-radius: 5px;
+	}
 
-::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
+	::-webkit-scrollbar-thumb:hover {
+		background-color: #555;
+	}
 
 
-::-webkit-scrollbar-button {
-    display: none;
-}
 
-::selection {
-    background-color: #1c2752;
-    /* Couleur de fond de la sélection */
-}
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+
+	::selection {
+		background-color: #1c2752;
+		/* Couleur de fond de la sélection */
+	}
 
 
-* {
-    text-decoration: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-family: 'Mulish';
+	* {
+		text-decoration: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-family: 'Mulish';
 
-}
+	}
 
 	article.user * {
 		box-sizing: border-box;
 	}
 
-/* 
+	/* 
  */
 
- 
+
 	article.user h1.noir,
 	article.user p.noir {
 		color: white;
@@ -110,7 +111,7 @@
 		margin-top: 10px;
 	}
 
-/* 	footer {
+	/* 	footer {
 		background-color: #f4f4f4 !important;
 		color: black!important;
 	}
