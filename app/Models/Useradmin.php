@@ -15,4 +15,5 @@ class Useradmin extends Model
         $query = $builder->getWhere(['nom' => $nom, 'password' => $pwd, 'role' => 'admin']);
         return count($query->getResult());
     }
+    
 }
