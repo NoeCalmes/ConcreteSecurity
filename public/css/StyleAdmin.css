@@ -57,11 +57,13 @@
     align-items: center;
     border-radius: 8px;
     margin-left: 50px;
+    /* Bouton Deconnexion */
 }
 
 .header-nav .btn-logout{
     position: absolute;
     margin: 0px 0px 0px 1500px;
+    /* Bouton Deconnexion */
 }
 
 .nav {
