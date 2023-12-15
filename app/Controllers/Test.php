@@ -10,6 +10,7 @@ use App\Models\Periode;
 use App\Models\Prestation;
 
 class Test extends BaseController {
+
     public function getIndex() {
         //MODELE CLIENT
         /*     $clients = Client::all();
