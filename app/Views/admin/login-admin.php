@@ -10,17 +10,17 @@
 <body>
   <div class="wrapper">
     <header>Pannel Admin</header>
-    <form action="#">
+    <form action="<?php echo base_url("useradminctrl/adminlogin")?>" method="post">
       <div class="field email">
         <div class="input-area">
-          <input type="text" placeholder="Identifiant">
+          <input type="text" placeholder="Identifiant" name="identifiant">
           <i class="icon fas fa-envelope"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>
       </div>
       <div class="field password">
         <div class="input-area">
-          <input type="password" placeholder="Mot de passe">
+          <input type="password" placeholder="Mot de passe" name="mdp">
           <i class="icon fas fa-lock"></i>
           <i class="error error-icon fas fa-exclamation-circle"></i>
         </div>

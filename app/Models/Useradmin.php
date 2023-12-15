@@ -8,12 +8,12 @@ class Useradmin extends Model
 {
 
     public $timestamps = false;
-    
-    public function isAdmin($nom,$pwd) {
+
+    public function isAdmin($identifiant,$mdp) {
         $db = \Config\Database::connect();
-        $builder = $db->table('users');
-        $query = $builder->getWhere(['nom' => $nom, 'password' => $pwd, 'role' => 'admin']);
+        $builder = $db->table('useradmins');
+        $query = $builder->getWhere(['nom' => $identifiant, 'password' => $mdp, 'role' => 'admin']);
         return count($query->getResult());
     }
-    
+
 }
