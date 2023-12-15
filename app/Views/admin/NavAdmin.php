@@ -15,13 +15,13 @@
         <div class="border"></div>
         <h1> Bienvenue sur L'admin Panel , (Admin Name) </h1>
         <div class="btn-logout">
-            <a href="PanelAdmin/contrat" class="navbar">Deconnexion</a>
+            <a href="useradminctrl/adminlogout" class="navbar">Deconnexion</a>
         </div>
     </div>
 
     <div class="nav">
         <div class="list-contrat">
-            <a href="useradminctrl/adminlogout" class="navbar">Accueil</a>
+            <a href="home" class="navbar">Accueil</a>
         </div>
         <div class="list-contrat">
             <a href="#" class="navbar">Contrat</a>
