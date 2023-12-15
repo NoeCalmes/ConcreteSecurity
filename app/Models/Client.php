@@ -10,5 +10,5 @@ class Client extends Model
 
     public function demandes() {
         return $this->hasMany('App\Models\Demande');
-    }
+    }  
 }

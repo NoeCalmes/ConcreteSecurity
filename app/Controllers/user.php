@@ -19,18 +19,30 @@ class User extends BaseController
         $nom = request()->getPost('nom-user');
         $email = request()->getPost('email-user');
         $mot_de_passe = request()->getPost('mdp-user');
-    
+
         // Créer une nouvelle instance du modèle Client
         $client = new Client();
         $client->nom = $nom;
         $client->mail = $email;
         $client->mdp = $mot_de_passe;
-    
+
         // Enregistrer le client dans la base de données
         $client->save();
-    
+
         // Vous pouvez également rediriger l'utilisateur vers une autre page après l'inscription
         return $this->getIndex();
     }
-    
+
+
+    public function postLogin()
+    {
+        $email = request()->getPost('email-connect');
+        $mdp = request()->getPost('mdp-connect');
+
+
+        return view('/user/navbar-client')
+        . view('/user/userlogin')
+        . view('/template/footer');
+
+    }
 }

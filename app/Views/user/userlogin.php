@@ -23,10 +23,10 @@
 
 		</div>
 		<div class="form-container sign-in-container">
-			<form action="#">
+			<form action="<?php echo base_url('user/login'); ?>" method="post">
 				<h1 class="client">Déjà client ?</h1>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Mot de passe" />
+				<input type="email" placeholder="Email" name="email-connect" />
+				<input type="password" placeholder="Mot de passe" name="mdp-connect" />
 				<!-- <a href="#">Mot de passe oublié ?</a> -->
 				<button class="conect">Se connecter</button>
 			</form>
@@ -42,7 +42,6 @@
 					<h1 class="noir">Bienvenue mon ami !</h1>
 					<p class="noir">Entrez vos informations personnelles et commencez à créer votre compte</p>
 					<button class="ghost lop" id="signUp">Créé un compte</button>
-
 				</div>
 			</div>
 		</div>
@@ -90,8 +89,7 @@
 		box-sizing: border-box;
 	}
 
-	/* 
- */
+
 
 
 	article.user h1.noir,
