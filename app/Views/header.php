@@ -13,3 +13,6 @@
     rel="stylesheet">
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<!-- ICON FONTAWESOME -->
+<script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
