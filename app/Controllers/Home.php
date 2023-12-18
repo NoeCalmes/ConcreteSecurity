@@ -6,9 +6,10 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('/template/navbar')
-            . view('/home/acceuil')
-            . view('/template/footer');
+        return view('/header')
+        . view('/template/navbar')
+        . view('/acceuil-view')
+        . view('/template/footer');
     }
     
 }

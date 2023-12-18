@@ -7,7 +7,7 @@ class apropos extends BaseController
     public function getindex(): string
     {
         return view('/template/navbar')
-            . view('/apropos/apropos')
+            . view('/apropos-view')
             . view('/template/footer');
     }
 }
