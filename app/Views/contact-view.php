@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> 
   <title>Contact</title>
 </head>
 
@@ -14,9 +14,12 @@
     <div class="form">
       <div class="contact-info">
         <h3 class="title">Prenons contact</h3>
+        <i class="fa-sharp fa-thin fa-house"></i>
+        <i class="fa-sharp fa-thin fa-house"></i> 
         <p class="text">
           Une question ? N'hésitez pas à nous contacter. Nous sommes là pour répondre à toutes vos interrogations.
         </p>
+  
 
         <div class="info">
           <div class="information">
