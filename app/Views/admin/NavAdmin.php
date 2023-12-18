@@ -15,6 +15,7 @@
         <div class="border"></div>
         <h1> Bienvenue sur L'admin Panel , (Admin Name) </h1>
         <div class="btn-logout">
+            <i class="fa-solid fa-power-off"></i>
             <a href="useradminctrl/adminlogout" class="navbar">Deconnexion</a>
         </div>
     </div>

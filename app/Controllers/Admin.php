@@ -10,7 +10,8 @@ class Admin extends BaseController
 {
     public function getHome()
     {
-        return view('/admin/NavAdmin')
+        return view("/header")
+        .view('/admin/NavAdmin')
         .view('/admin/MainAdmin')
         .view('/admin/FooterAdmin');
     }
