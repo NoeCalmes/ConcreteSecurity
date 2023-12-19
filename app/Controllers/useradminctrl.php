@@ -32,7 +32,7 @@ class useradminctrl extends BaseController
             }
     }
 
-    public function postAdminlogout(){
+    public function getAdminlogout(){
         $session = session();
         
         $session->destroy();

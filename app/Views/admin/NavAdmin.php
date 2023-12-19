@@ -13,10 +13,10 @@
     <div class="header-nav">
         <img src="<?= base_url('public/img/acceuil/logocr.png') ?>" alt="" class="logo" id="logo">
         <div class="border"></div>
-        <h1> Bienvenue sur L'admin Panel , (Admin Name) </h1>
+        <h1> Bienvenue sur L'admin Panel , <?php echo $Name  ?> !</h1>
         <div href="useradminctrl/adminlogout" class="btn-logout">
             <i class="fa-solid fa-power-off"></i>
-            <a href="useradminctrl/adminlogout" class="navbar">Deconnexion</a>
+            <a class="navbar"><?php echo anchor('useradminctrl/adminlogout', 'Déconnexion') ?></a>
         </div>
         
         
@@ -27,14 +27,14 @@
             <a href="home" class="navbar">Accueil</a>
         </div>
         <div class="list-contrat">
-            <a href="#" class="navbar">Contrat</a>
+            <a href="contrat" class="navbar">Contrat</a>
             <div class="arrow"></div>
         </div>
         <div class="list-contrat">
-            <a href="#" class="navbar">Demandes</a>
+            <a href="demande" class="navbar">Demandes</a>
         </div>
         <div class="list-contrat">
-            <a href="#" class="navbar">Employés</a>
+            <a href="employe" class="navbar">Employés</a>
         </div>
     </div>
 
