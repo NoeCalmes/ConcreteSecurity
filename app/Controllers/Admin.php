@@ -10,16 +10,94 @@ class Admin extends BaseController
 {
     public function getHome()
     {
+        $session = session();
+        
+        // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
+        if (!$session->has('admin') || !$session->admin) {
+            return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
+        }
+
+        // Récupérez le nom de l'admin depuis la session
+        $nom = $session->get('nom');
+        
+        $data['Name'] = $nom;
+
         return view("/header")
-        .view('/admin/NavAdmin')
-        .view('/admin/MainAdmin')
-        .view('/admin/FooterAdmin');
+            .view('/admin/NavAdmin', $data)
+            .view('/admin/MainAdmin')
+            .view('/admin/FooterAdmin');
     }
 
    
     public function getContrat()
     {
+
+        $contrats = Contrat::all();
+
+        
+
+
+
+
+        $session = session();
+        
+        // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
+        if (!$session->has('admin') || !$session->admin) {
+            return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
+        }
+
+        // Récupérez le nom de l'admin depuis la session
+        $nom = $session->get('nom');
+        
+        $data['Name'] = $nom;
+
+        return view("/header")
+            .view('/admin/NavAdmin', $data)
+            .view('/admin/ContratAdmin')
+            .view('/admin/FooterAdmin');
     
+    }
+
+    public function getDemande()
+    {
+        $session = session();
+        
+        // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
+        if (!$session->has('admin') || !$session->admin) {
+            return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
+        }
+
+        // Récupérez le nom de l'admin depuis la session
+        $nom = $session->get('nom');
+        
+        $data['Name'] = $nom;
+
+        return view("/header")
+            .view('/admin/NavAdmin', $data)
+            .view('/admin/DemandeAdmin')
+            .view('/admin/FooterAdmin');
+    }
+
+
+
+    public function getEmploye()
+    {
+        $session = session();
+        
+        // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
+        if (!$session->has('admin') || !$session->admin) {
+            return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
+        }
+
+        // Récupérez le nom de l'admin depuis la session
+        $nom = $session->get('nom');
+        
+        $data['Name'] = $nom;
+
+        return view("/header")
+            .view('/admin/NavAdmin', $data)
+            .view('/admin/EmployeAdmin')
+            .view('/admin/FooterAdmin');
     }
 
 
