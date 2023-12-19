@@ -18,6 +18,8 @@
             <i class="fa-solid fa-power-off"></i>
             <a href="useradminctrl/adminlogout" class="navbar">Deconnexion</a>
         </div>
+        
+        
     </div>
 
     <div class="nav">
