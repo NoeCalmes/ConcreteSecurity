@@ -37,7 +37,7 @@ class Admin extends BaseController
 
         $data['contrats'] = Contrat::all();
         $data['contratsattente'] = Contrat::where('employe_id', NULL)->get();
-
+        $data['contratsassigne'] = Contrat::where('employe_id,  !NULL)->get();
 
 
         $session = session();
