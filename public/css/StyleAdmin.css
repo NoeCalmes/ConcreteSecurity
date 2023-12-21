@@ -43,7 +43,7 @@
     margin-right: 60px;
 }
 
-.header-nav a{
+.header-nav a {
     margin-left: 10px;
     color: white;
     /* Bouton Deconnexion */
@@ -64,10 +64,9 @@
     /* Bouton Deconnexion */
 }
 
-.header-nav .btn-logout{
-    position: absolute;
-    margin: 0px 0px 0px 1500px;
-    /* Bouton Deconnexion */
+.header-nav .btn-logout {
+
+    margin-right: 20px;
 }
 
 .nav {
@@ -160,7 +159,7 @@ body.paneladmin {
 }
 
 
-.color-txt p{
+.color-txt p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,7 +187,7 @@ body.paneladmin {
 }
 
 
-.Text-Container{
+.Text-Container {
     text-align-last: center;
     margin: 0px 50px 0px 50px;
 }
@@ -240,4 +239,3 @@ body.paneladmin {
     margin-left: 20px;
     color: white;
 }
-
