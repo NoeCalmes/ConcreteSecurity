@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\Categories;
 use App\Models\User;
 use App\Models\Produit;
+use App\Models\Contrat;
+use App\Models\Demande;
+use App\Models\Employe;
 
 class Admin extends BaseController
 {
@@ -32,10 +35,8 @@ class Admin extends BaseController
     public function getContrat()
     {
 
-        $contrats = Contrat::all();
-
-        
-
+        $data['contrats'] = Contrat::all();
+        $data['contratsattente'] = Contrat::where('employe_id', NULL)->get();
 
 
 
@@ -53,7 +54,7 @@ class Admin extends BaseController
 
         return view("/header")
             .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin')
+            .view('/admin/ContratAdmin', $data)
             .view('/admin/FooterAdmin');
     
     }
