@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 230px;
+    width: 200px;
     height: 50px;
     /* Bouton Deconnexion */
 }
@@ -159,6 +159,67 @@ body.paneladmin {
     height: 400px;
 }
 
+
+.color-txt p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #01313f;
+    width: 80px;
+    height: 30px;
+    margin: 0px 0px 30px 25px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.Texte h3 {
+    margin: 0px 0px 60px 0px;
+    background-color: rgb(212, 219, 227);
+    border-radius: 15px;
+    height: 80px;
+}
+
+.Texte2 h3 {
+    margin: 0px 0px 30px 0px;
+    background-color: rgb(212, 219, 227);
+    border-radius: 15px;
+    height: 80px;
+}
+
+
+.Text-Container{
+    text-align-last: center;
+    margin: 0px 50px 0px 50px;
+}
+
+/*----------------Contrat-----------------*/
+
+.container-contrat .Title h1 {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+
+.container-contrat .border-title {
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0px 0px 27px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .footer-admin {
     position: absolute;
     width: 100%;
@@ -179,3 +240,4 @@ body.paneladmin {
     margin-left: 20px;
     color: white;
 }
+
