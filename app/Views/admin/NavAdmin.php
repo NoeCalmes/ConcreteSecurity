@@ -24,17 +24,30 @@
 
     <div class="nav">
         <div class="list-contrat">
-            <a href="home" class="navbar">Accueil</a>
+            <?php echo anchor('admin/home','Acceuil'); ?>
         </div>
         <div class="list-contrat">
-            <a href="contrat" class="navbar">Contrat</a>
+            <a class="navbar">Contrat</a>
             <div class="arrow"></div>
+            <div class="contrat-menu">
+                <?php echo anchor('admin/contrat/1','Contrats en Attente'); ?>
+                <?php echo anchor('admin/contrat/2','Contrats Assignés'); ?>
+                <?php echo anchor('admin/contrat/3','Contrats Terminés'); ?>
+            </div>
         </div>
         <div class="list-contrat">
             <a href="demande" class="navbar">Demandes</a>
+            <div class="arrow"></div>
+            <div class="contrat-menu">
+                <a href="option1">Demandes en Attentes</a>
+                <a href="option2">Demandes Refusées</a>
+                <a href="option3">Demandes Signées</a>
+                <a href="option3">Demandes Acceptée</a>
+                <a href="option3">Demandes En cours</a>
+            </div>
         </div>
         <div class="list-contrat">
-            <a href="employe" class="navbar">Employés</a>
+            <?php echo anchor('admin/employe','Employés'); ?>
         </div>
     </div>
 
@@ -42,9 +55,7 @@
 
 
 <style>
-
-
-
+       
 
 
 </style>

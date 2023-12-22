@@ -32,12 +32,24 @@ class Admin extends BaseController
     }
 
    
-    public function getContrat()
+    public function getContrat($identifiant)
     {
+        //$identifiant = $this->request->getPost('contratChoice');
+
+        //dd($identifiant);
 
         $data['contrats'] = Contrat::all();
-        $data['contratsattente'] = Contrat::where('employe_id', NULL)->get();
-        $data['contratsassigne'] = Contrat::whereNotNull('employe_id')->get();
+
+        if($identifiant == "1"){
+            $data['title'] = "Contrat en Attente";
+            $data['contrats'] = Contrat::where('employe_id', NULL)->get();
+        }else if($identifiant == '2'){
+            $data['title'] = "Contrat Assignés";
+            $data['contrats'] = Contrat::whereNotNull('employe_id')->get();
+        }else if($identifiant == '3'){
+            $data['title'] = "Contrat Terminés";
+            $data['contrats'] = Contrat::whereNotNull('employe_id')->get();
+        }
         
 
 

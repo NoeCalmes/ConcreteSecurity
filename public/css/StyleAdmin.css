@@ -192,7 +192,7 @@ body.paneladmin {
     margin: 0px 50px 0px 50px;
 }
 
-/*----------------Contrat-----------------*/
+/*------------------------------------------------------------------ DEBUT Contrat------------------------------------------------------------------*/
 
 .container-contrat .Title h1 {
     margin-top: 30px;
@@ -207,7 +207,60 @@ body.paneladmin {
     margin: 3px 0px 0px 27px;
     border-radius: 10px;
 }
+/*------------------------------------------------------------------FIN Contrat------------------------------------------------------------------*/
 
+
+/*-------------------------------------------------------------- DEBUT Navbar hover------------------------------------------------------------- */
+.list-contrat {
+    position: relative;
+}
+
+.contrat-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-size: 30px;
+    border-radius: 10px;
+    width: 95%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+}
+
+.list-contrat:hover .contrat-menu {
+    display: block;
+}
+
+
+#contrat-btn:hover {
+    background-color: #f0f0f0; 
+}
+
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    border-color: #555 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+
+.contrat-menu a:hover {
+    color: rgb(92, 92, 92); 
+}
+
+
+/* -----------------------------------------------------------------------FIN Navbar hover---------------------------------------------------- */
 
 
 
