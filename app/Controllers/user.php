@@ -36,13 +36,20 @@ class User extends BaseController
 
     public function postLogin()
     {
-        $email = request()->getPost('email-connect');
+     /*    $email = request()->getPost('email-connect');
         $mdp = request()->getPost('mdp-connect');
 
 
         return view('/user/navbar-client')
         . view('/user/userlogin')
-        . view('/template/footer');
+        . view('/template/footer'); */
 
     }
+
+    public function gettest() {
+        return view('/user/navbar-client')
+        . view('/header');
+        
+    }
+
 }
