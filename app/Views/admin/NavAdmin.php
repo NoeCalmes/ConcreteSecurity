@@ -30,9 +30,9 @@
             <a class="navbar">Contrat</a>
             <div class="arrow"></div>
             <div class="contrat-menu">
-                <?php echo anchor('admin/contrat/1','Contrats en Attente'); ?>
-                <?php echo anchor('admin/contrat/2','Contrats Assignés'); ?>
-                <?php echo anchor('admin/contrat/3','Contrats Terminés'); ?>
+                <?php echo anchor('admin/contrats/1/null','Contrats en Attente'); ?>
+                <?php echo anchor('admin/contrats/2/null','Contrats Assignés'); ?>
+                <?php echo anchor('admin/contrats/3/null','Contrats Terminés'); ?>
             </div>
         </div>
         <div class="list-contrat">
