@@ -4,7 +4,7 @@ const initSlider = () => {
     const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
-    
+
     // Handle scrollbar thumb drag
     scrollbarThumb.addEventListener("mousedown", (e) => {
         const startX = e.clientX;
@@ -21,7 +21,8 @@ const initSlider = () => {
             const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
             
             scrollbarThumb.style.left = `${boundedPosition}px`;
-            imageList.scrollLeft = scrollPosition;
+            imageList.scrollLeft = scrollPosition; 
+
         }
 
         // Remove event listeners on mouse up
@@ -43,6 +44,12 @@ const initSlider = () => {
             imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
         });
     });
+
+    // Creation Prestation 
+
+
+
+
 
      // Show or hide slide buttons based on scroll position
     const handleSlideButtons = () => {

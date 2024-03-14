@@ -1,4 +1,3 @@
-
 <!-- HEADER DEBUT -->
 <header>
     <div class="container">
@@ -27,12 +26,12 @@
    <!-- NAV DEBUT -->
     <nav>
         <ul>
-            <li><a href=" <?= base_url('') ?>">Acceuil</a></li>
-        <li><a href="<?= base_url('') ?>#prestations">Nos Prestations</a></li>
-        <li><a href="<?= base_url('apropos') ?>">A Propos</a></li>
-        <li><a href="<?= base_url('contact') ?>">Contact</a></li>
+            <li><a href=" <?php echo base_url('') ?>">Acceuil</a></li>
+        <li><a href="<?php echo base_url('') ?>#prestations">Nos Prestations</a></li>
+        <li><a href="<?php echo base_url('apropos') ?>">A Propos</a></li>
+        <li><a href="<?php echo base_url('contact') ?>">Contact</a></li>
         </ul>
-        <a href="#" class="demande">Créé une Demande</a>
+        <a href="<?php echo base_url('user') ?>" class="demande">Créé une Demande</a>
         </nav>
         <!-- NAVBAR FIN -->
 
@@ -202,7 +201,7 @@
                 transition: background-color 0.2s;
             }
 
-            
+
             /* NAVBAR FIN */
         </style>
         <script>

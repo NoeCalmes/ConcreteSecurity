@@ -14,7 +14,7 @@
         </div>
         <div class="right">
             <h1>A propos</h1>
-            <h2>L'entreprise concretesecurity</h2>
+            <h2>L'entreprise Concretesecurity</h2>
             <p>ConcreteSecurity, fondée en 2012 à Mende, est aujourd'hui un acteur majeur en Lozère en matière de
                 sécurité. Forte de ses neuf ans d'expérience, l'entreprise a fièrement offert 250 services de sécurité
                 personnalisés à ses clients. Elle s'est imposée comme une référence dans le domaine, grâce à son

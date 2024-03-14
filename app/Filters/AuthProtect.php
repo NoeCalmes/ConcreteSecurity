@@ -11,15 +11,20 @@ class AuthProtect implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         $session = session();
-        if ($session->has('admin')) {
-            if (!$session->get('admin')) {
-                return redirect()->to('/');
-            }
+
+        // Vérifier si l'utilisateur est connecté
+        if ($request->uri->getSegment(1) === 'admin' && !$session->get('admin')) {
+            // Rediriger vers la page d'accueil si l'admin n'est pas connecté
+            return redirect()->to('/');
         }
-        else {
+
+        // Vérifier si l'utilisateur est connecté pour les URL commençant par "demande/"
+        if ($request->uri->getSegment(1) === 'demande' && !$session->get('user')) {
+            // Rediriger vers la page d'accueil si l'utilisateur n'est pas connecté
             return redirect()->to('/');
         }
     }
+
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
     }

@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Controllers;
 
-class Home extends BaseController
+class Client extends BaseController
 {
-    public function index(): string
+     
+    public function getpannel()
     {
         $navbarView = 'template/navbar';
 
@@ -14,9 +14,12 @@ class Home extends BaseController
             $navbarView = 'user/navbar-client';
         }
 
-        return view('header')
-            . view($navbarView)
-            . view('acceuil-view')
-            . view('template/footer');
+
+        return view("/header")
+            .view($navbarView)
+            .view('/acceuil-view')
+            .view('/template/footer');
+
     }
+    
 }

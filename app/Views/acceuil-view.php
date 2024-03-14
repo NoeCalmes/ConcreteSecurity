@@ -61,7 +61,7 @@
         <div class="container-text">
             <div class="left">
                 <div class="top-text">
-                    <img src="<?= base_url('public/img/acceuil/company2.svg') ?>" alt="">
+                    <img src="<?php echo base_url('public/img/acceuil/company2.svg') ?>" alt="">
                     <p>Nos services</p>
                 </div>
                 <div class="mid-text">
@@ -75,7 +75,7 @@
                     </p>
                 </div>
                 <div class="end-text">
-                    <a href="#">Read More</a>
+                    <a href="<?php echo base_url('') ?>">Lire plus</a>
                 </div>
             </div>
 

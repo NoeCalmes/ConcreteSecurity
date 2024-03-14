@@ -6,22 +6,31 @@
 
         <div class="link">
             <img src="<?= base_url('public/img/acceuil/mail.svg') ?>" alt="">
-            <div class="mail">
-                <h1>Courriel</h1>
-                <p>concrete.secu@contact.com</p>
-            </div>
+                <div class="mail">
+                    <h1>Courriel</h1>
+                    <p>concrete.secu@contact.com</p>
+                </div>
             <img src="<?= base_url('public/img/acceuil/tel.svg') ?>" alt="" class="space">
-            <div class="call">
-                <h1>Téléphone</h1>
-                <p>+05 65 36 87 45</p>
-            </div>
+                <div class="call">
+                    <h1>Téléphone</h1>
+                    <p>+05 65 36 87 45</p>
+                </div>
         </div>
-        <a href="#" class="absolute"><img class="account" src="<?= base_url('public/img/acceuil/account.svg') ?>"
-                alt=""></a>
+      
 
-        <a href="#" class="deco" ><img class="account" src="<?= base_url('public/img/acceuil/power-off.png') ?>"
-                alt=""></a>
+        <!--    Information Compte Client -->
+        <a href="#" class="account" >
+            <img class="img-account" src="<?= base_url('public/img/acceuil/account.svg') ?>" alt="">
+        </a>
+        <!--    Information Compte Client -->
 
+        <!--    Deconnexion Compte Client -->
+        <a class="deco" href="<?php echo site_url('user/Userlogout') ?>">
+        <img class="img-deco" src="<?= base_url('public/img/acceuil/deco.svg') ?>" alt="">
+        </a>  
+        
+        <!--    Deconnexion Compte Client -->
+        
     </div>
 </header>
 
@@ -30,12 +39,12 @@
 <!-- NAV DEBUT -->
 <nav>
     <ul>
-        <li><a href=" <?= base_url('') ?>">Acceuil</a></li>
-        <li><a href="<?= base_url('') ?>#prestations">Nos Prestations</a></li>
-        <li><a href="<?= base_url('apropos') ?>">A Propos</a></li>
-        <li><a href="<?= base_url('contact') ?>">Contact</a></li>
+        <li><a href=" <?php echo base_url('') ?>">Acceuil</a></li>
+        <li><a href="<?php echo base_url('') ?>#prestations">Nos Prestations</a></li>
+        <li><a href="<?php echo base_url('apropos') ?>">A Propos</a></li>
+        <li><a href="<?php echo base_url('contact') ?>">Contact</a></li>
     </ul>
-    <a href="#" class="demande">Créé une Demande</a>
+    <a href="<?php echo base_url('demandes') ?>" class="demande">Créé une Demande</a>
 </nav>
 <!-- NAVBAR FIN -->
 
@@ -123,17 +132,44 @@
         right: 40px;
     }
 
-    header .container img.account {
-        background-color: #ffb342;
+    a.account  {
+        margin-left:50px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
         width: 28px;
         height: 28px;
-
         padding: 7px;
         border-radius: 40%;
+        background-color:#ffb342;
+        cursor:pointer;
+        margin-right:50px;
+    } 
+    a.deco  {
+    
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width: 28px;
+        height: 28px;
+        padding: 7px;
+        border-radius: 40%;
+        background-color:#ffb342;
+        cursor:pointer;
+        margin-left:50px;
     }
 
-
-
+    .img-account
+     {
+        width:28px;
+        height: 28px;
+    }
+    .img-deco
+     {
+        width:22px;
+        height: 22px;
+    }
+  
     /* HEADER FIN */
 
     /* NAVBAR DEBUT */
@@ -207,16 +243,6 @@
     }
 
 
-    a.deco {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right:55px;
-        width: 40px;
-        height: 40px;
-        background-color: red;
-        border-radius: 40%;
-    }
 
 
     /* NAVBAR FIN */

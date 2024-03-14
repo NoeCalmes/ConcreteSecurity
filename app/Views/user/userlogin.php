@@ -10,14 +10,13 @@
 	rel="stylesheet">
 
 <article class="user">
-	<!-- <h2></h2> -->
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
 			<form action="<?php echo base_url('user/createaccount'); ?>" method="post">
 				<h1 class="compte">Créer un compte</h1>
-				<input type="text" name="nom-user" placeholder="Nom" />
+				<input type="text" name="nom-user" placeholder="Nom / Prenom"nom" />
 				<input type="email" name="email-user" placeholder="Email" />
-				<input type="password" name="mdp-user" placeholder="Mot de passe" />
+				<input type="password" name="mdp-user" pattern=".{8,}" title="Le mot de passe doit avoir au moins 12 caractères." placeholder="Mot de passe" />
 				<button type="submit" class="inscrire">S'inscrire</button>
 			</form>
 
@@ -25,8 +24,8 @@
 		<div class="form-container sign-in-container">
 			<form action="<?php echo base_url('user/login'); ?>" method="post">
 				<h1 class="client">Déjà client ?</h1>
-				<input type="email" placeholder="Email" name="email-connect" />
-				<input type="password" placeholder="Mot de passe" name="mdp-connect" />
+				<input type="email" placeholder="Email" name="emailconnect" />
+				<input type="password" placeholder="Mot de passe" name="mdpconnect" />
 				<!-- <a href="#">Mot de passe oublié ?</a> -->
 				<button class="conect">Se connecter</button>
 			</form>
@@ -50,7 +49,7 @@
 </article>
 
 <style>
-	/* Scroll bar debut */
+
 	::-webkit-scrollbar {
 		width: 10px;
 	}
