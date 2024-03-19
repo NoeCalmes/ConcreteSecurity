@@ -54,6 +54,10 @@ class User extends BaseController
                 'mail' => $emailconnect,
                 'user' => true,
                 'nom' => $user->nom, // Ajoutez le nom du client dans la session
+                'tel' => $user->tel, 
+                'rue' => $user->rue, 
+                'cp' => $user->cp, 
+                'ville' => $user->ville, 
             );
             $session->set($sessiondata);
 
