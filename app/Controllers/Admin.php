@@ -264,6 +264,8 @@ class Admin extends BaseController
         
         $data['Name'] = $nom;
 
+        $data['Name'] = $nom;
+
         return view("/header")
             .view('/admin/NavAdmin', $data)
             .view('/admin/EmployeAdmin', $data)
