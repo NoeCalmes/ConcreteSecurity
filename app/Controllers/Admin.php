@@ -15,7 +15,7 @@ class Admin extends BaseController
     public function getHome()
     {
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -23,16 +23,16 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/MainAdmin')
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/MainAdmin')
+            . view('/admin/FooterAdmin');
     }
 
-   
+
     public function getContrat($identifiant)
     {
         //$identifiant = $this->request->getPost('contratChoice');
@@ -43,28 +43,28 @@ class Admin extends BaseController
 
         $data['contrats'] = Contrat::all();
 
-        if($identifiant == "1"){
+        if ($identifiant == "1") {
             $data['title'] = "Contrats en Attente";
             $data['contrats'] = Contrat::where('employe_id', NULL)->get();
             $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
-        }else if($identifiant == '2'){
+        } else if ($identifiant == '2') {
             $data['title'] = "Contrats Assignés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '>=', $data['date'])
-            ->get();
+                ->whereDate('datefin', '>=', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-sheet-plastic"></i>';
-        }else if($identifiant == '3'){
+        } else if ($identifiant == '3') {
             $data['title'] = "Contrats Terminés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '<', $data['date'])
-            ->get();
+                ->whereDate('datefin', '<', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-file-circle-check"></i>';
         }
-        
+
 
 
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -72,18 +72,19 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin', $data)
-            .view('/admin/FooterAdmin');
-    
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/ContratAdmin', $data)
+            . view('/admin/FooterAdmin');
+
     }
 
 
-    public function getContrats($identifiant, $id){
+    public function getContrats($identifiant, $id)
+    {
 
         $data['date'] = Date::now()->format('Y-m-d');
 
@@ -92,34 +93,34 @@ class Admin extends BaseController
         $data['identifiant'] = $identifiant;
 
 
-        if($identifiant == "1"){
+        if ($identifiant == "1") {
             $data['title'] = "Contrats en Attente";
             $data['contrats'] = Contrat::where('employe_id', NULL)->get();
             $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
-        }else if($identifiant == '2'){
+        } else if ($identifiant == '2') {
             $data['title'] = "Contrats Assignés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '>=', $data['date'])
-            ->get();
+                ->whereDate('datefin', '>=', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-sheet-plastic"></i>';
-        }else if($identifiant == '3'){
+        } else if ($identifiant == '3') {
             $data['title'] = "Contrats Terminés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '<', $data['date'])
-            ->get();
+                ->whereDate('datefin', '<', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-file-circle-check"></i>';
         }
 
-        if ($id == 'null'){
-            $data['contrat'] =  $data['contrats'][0];
-        }else{
+        if ($id == 'null') {
+            $data['contrat'] = $data['contrats'][0];
+        } else {
             $data['contrat'] = Contrat::find($id);
         }
 
 
-        
+
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -127,22 +128,22 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin', $data)
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/ContratAdmin', $data)
+            . view('/admin/FooterAdmin');
     }
 
 
-    
+
 
     public function getDemande()
     {
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -150,13 +151,13 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/DemandeAdmin')
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/DemandeAdmin')
+            . view('/admin/FooterAdmin');
     }
 
 
@@ -164,7 +165,7 @@ class Admin extends BaseController
     public function getEmploye()
     {
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -172,13 +173,13 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/EmployeAdmin')
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/EmployeAdmin')
+            . view('/admin/FooterAdmin');
     }
 
 

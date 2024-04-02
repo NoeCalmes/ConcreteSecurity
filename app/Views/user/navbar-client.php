@@ -19,7 +19,7 @@
 
 
         <!--    Information Compte Client -->
-        <a href="<?php echo base_url('panelclient') ?>" class="account">
+        <a href="<?php echo base_url('Infoclient') ?>" class="account">
             <img class="img-account" src="<?= base_url('public/img/acceuil/account.svg') ?>" alt="">
         </a>
         <!--    Information Compte Client -->
@@ -43,7 +43,8 @@
         <li><a href="<?php echo base_url('') ?>#prestations">Nos Prestations</a></li>
         <li><a href="<?php echo base_url('apropos') ?>">A Propos</a></li>
         <li><a href="<?php echo base_url('contact') ?>">Contact</a></li>
-<!--         <li><a href="<?php echo base_url('panelclient') ?>">Panel Client</a></li> -->
+        <!--         <li><a href="<?php echo base_url('panelclient') ?>">Panel Client</a></li> -->
+        <li class="vos-demandes"><a href="<?php echo base_url('panelclient') ?>">| Vos Demandes</a></li>
     </ul>
     <a href="<?php echo base_url('demandes') ?>" class="demande">Créé une Demande</a>
 </nav>
@@ -148,7 +149,6 @@
     }
 
     a.deco {
-
         display: flex;
         align-items: center;
         justify-content: center;
@@ -243,6 +243,7 @@
         transition: background-color 0.2s;
     }
 
+   
 
 
 

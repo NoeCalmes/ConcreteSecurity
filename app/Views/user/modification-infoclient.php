@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Client</title>
+    <title>Modifier vos informations</title>
 </head>
 
 <body>
 
     <div class="container-infoclient">
-        <form id="modifier-form" method="post" action="<?php echo base_url("/panelclient/update"); ?>">
+        <form id="modifier-form" method="post" action="<?php echo base_url("../Modification/update"); ?>">
         <h2 class="infoclient-panel">Vos informations : </h2>
             <div class="container-principal-client">
                 <div class="container-textclient">

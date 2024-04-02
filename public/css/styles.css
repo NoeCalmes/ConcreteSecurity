@@ -949,12 +949,13 @@ span#prix-total-informations {
 }
 
 .container-informations .btn-confirm {
-    margin-top: 20px;
+    margin-top: 25px;
     background-color: #1c2752;
     color: white;
     padding: 10px;
     font-weight: 500;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .info-saisi {
@@ -1208,7 +1209,6 @@ a.extra-men {
 }
 
 
-
 .bloc-input input.input1 {
     margin-right: 25px;
     width: 200px;
@@ -1218,7 +1218,7 @@ a.extra-men {
 
 .bloc-input input.input2 {
     margin-right: 25px;
-    width: 70px;
+    width: 110px;
 }
 
 .bloc-input input.input3 {
@@ -1234,6 +1234,16 @@ a.extra-men {
 
 .p-inputtext {
     margin-right: 7px;
+
+}
+
+.p-inputtext-separation {
+    margin: 0px 10px 0px 10px;
+
+}
+
+.p-inputtext-separation1 {
+    margin: 0px 10px 0px 0px;
 
 }
 
@@ -1369,3 +1379,6 @@ a.extra-men {
 }
 
 /* CHECKBOX FIN */
+
+/* PAGE panel client DEBUT*/
+/* PAGE panel client FIN*/

@@ -1,90 +1,3 @@
-const initSlider = () => {
-  const imageList = document.querySelector(".slider-wrapper .image-list");
-  const slideButtons = document.querySelectorAll(
-    ".slider-wrapper .slide-button"
-  );
-  const sliderScrollbar = document.querySelector(
-    ".container .slider-scrollbar"
-  );
-  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
-  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
-
-  // Handle scrollbar thumb drag
-  scrollbarThumb.addEventListener("mousedown", (e) => {
-    const startX = e.clientX;
-    const thumbPosition = scrollbarThumb.offsetLeft;
-    const maxThumbPosition =
-      sliderScrollbar.getBoundingClientRect().width -
-      scrollbarThumb.offsetWidth;
-
-    // Update thumb position on mouse move
-    const handleMouseMove = (e) => {
-      const deltaX = e.clientX - startX;
-      const newThumbPosition = thumbPosition + deltaX;
-
-      // Ensure the scrollbar thumb stays within bounds
-      const boundedPosition = Math.max(
-        0,
-        Math.min(maxThumbPosition, newThumbPosition)
-      );
-      const scrollPosition =
-        (boundedPosition / maxThumbPosition) * maxScrollLeft;
-
-      scrollbarThumb.style.left = `${boundedPosition}px`;
-      imageList.scrollLeft = scrollPosition;
-    };
-
-    // Remove event listeners on mouse up
-    const handleMouseUp = () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    // Add event listeners for drag interaction
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  });
-
-  // Slide images according to the slide button clicks
-  slideButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const direction = button.id === "prev-slide" ? -1 : 1;
-      const scrollAmount = imageList.clientWidth * direction;
-      imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-  });
-
-  // Creation Prestation
-
-  // Show or hide slide buttons based on scroll position
-  const handleSlideButtons = () => {
-    slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-    slideButtons[1].style.display =
-      imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-  };
-
-  // Update scrollbar thumb position based on image scroll
-  const updateScrollThumbPosition = () => {
-    const scrollPosition = imageList.scrollLeft;
-    const thumbPosition =
-      (scrollPosition / maxScrollLeft) *
-      (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
-    scrollbarThumb.style.left = `${thumbPosition}px`;
-  };
-
-  // Call these two functions when image list scrolls
-  imageList.addEventListener("scroll", () => {
-    updateScrollThumbPosition();
-    handleSlideButtons();
-  });
-};
-
-window.addEventListener("resize", initSlider);
-window.addEventListener("load", initSlider);
-
-
-
-/* DEMANDE PAGE */
 // Script JavaScript spécifique à la page de demande
 (function demandePageScript() {
   document.addEventListener("DOMContentLoaded", function () {
@@ -107,56 +20,87 @@ window.addEventListener("load", initSlider);
     var confirmerBtn = document.getElementById("confirmer-btn");
     var informationsContainer = document.getElementById("informations");
 
+    // Fonction pour vérifier si au moins une prestation est sélectionnée
+    function checkAtLeastOnePrestationSelected() {
+      var atLeastOneSelected = false;
+      checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+          atLeastOneSelected = true;
+        }
+      });
+      return atLeastOneSelected;
+    }
+
+    // Fonction pour vérifier si tous les champs sont remplis
+    function checkAllFieldsFilled() {
+      var dateDebut = document.getElementById("date-debut-input").value;
+      var dateFin = document.getElementById("date-fin-input").value;
+      var adresse = document.querySelector(".input1").value;
+      var ville = document.querySelector(".input2").value;
+      var codePostal = document.querySelector(".input3").value;
+
+      return (
+        dateDebut.trim() !== "" &&
+        dateFin.trim() !== "" &&
+        adresse.trim() !== "" &&
+        ville.trim() !== "" &&
+        codePostal.trim() !== "" &&
+        checkAtLeastOnePrestationSelected() // Vérifie si au moins une prestation est sélectionnée
+      );
+    }
+
     if (envoyerBtn && confirmerBtn && informationsContainer) {
       envoyerBtn.addEventListener("click", function () {
-        containerInformations.style.display = "block";
-        informationsContainer.innerHTML = "";
+        // Vérifier si tous les champs sont remplis avant d'afficher les informations
+        if (checkAllFieldsFilled()) {
+          containerInformations.style.display = "block";
+          informationsContainer.innerHTML = "";
 
-        // Récupérer les valeurs des champs de date de début et de fin
-        var dateDebut = document.getElementById("date-debut-input").value;
-        var dateFin = document.getElementById("date-fin-input").value;
+          // Récupérer les valeurs des champs de date de début et de fin
+          var dateDebut = document.getElementById("date-debut-input").value;
+          var dateFin = document.getElementById("date-fin-input").value;
 
-        // Afficher les dates de début et de fin dans les informations saisies
-        var dateDebutElement = document.createElement("p");
-        dateDebutElement.textContent = "Date de début: " + dateDebut;
-        informationsContainer.appendChild(dateDebutElement);
+          // Afficher les dates de début et de fin dans les informations saisies
+          var dateDebutElement = document.createElement("p");
+          dateDebutElement.textContent = "Date de début: " + dateDebut;
+          informationsContainer.appendChild(dateDebutElement);
 
-        var dateFinElement = document.createElement("p");
-        dateFinElement.textContent = "Date de fin: " + dateFin;
-        informationsContainer.appendChild(dateFinElement);
+          var dateFinElement = document.createElement("p");
+          dateFinElement.textContent = "Date de fin: " + dateFin;
+          informationsContainer.appendChild(dateFinElement);
 
-        checkboxes.forEach(function (checkbox) {
-          if (checkbox.checked) {
-            var prestBloc = checkbox.closest(".prest-bloc");
-            if (prestBloc) {
-              var description =
-                prestBloc.querySelector(".description-prest").textContent;
-              var prix = prestBloc.querySelector(".prix-prest").textContent;
-              var type = prestBloc.querySelector(".type-prest").textContent;
-              var selectElement = prestBloc.querySelector("#choix");
-              var duree =
-                selectElement.options[selectElement.selectedIndex].textContent;
-              var infoText =
-                description + "(" + type + ") " + duree + " - " + prix;
-              var infoElement = document.createElement("p");
-              infoElement.textContent = infoText;
-              informationsContainer.appendChild(infoElement);
+          checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+              var prestBloc = checkbox.closest(".prest-bloc");
+              if (prestBloc) {
+                var description =
+                  prestBloc.querySelector(".description-prest").textContent;
+                var prix = prestBloc.querySelector(".prix-prest").textContent;
+                var type = prestBloc.querySelector(".type-prest").textContent;
+                var selectElement = prestBloc.querySelector("#choix");
+                var duree =
+                  selectElement.options[selectElement.selectedIndex]
+                    .textContent;
+                var infoText =
+                  description + "(" + type + ") " + duree + " - " + prix;
+                var infoElement = document.createElement("p");
+                infoElement.textContent = infoText;
+                informationsContainer.appendChild(infoElement);
+              }
             }
-          }
-        });
+          });
 
-        var prixTotalElement = document.createElement("p");
-        var prixTotal = document.getElementById(
-          "prix-total-informations"
-        ).textContent;
-        prixTotalElement.textContent = "Prix total: " + prixTotal;
-        informationsContainer.appendChild(prixTotalElement);
-
-        leftDemande.style.display = "none";
+          leftDemande.style.display = "none";
+        } else {
+          // Afficher un message d'erreur si tous les champs ne sont pas remplis
+          alert(
+            "Veuillez remplir tous les champs et sélectionner au moins une prestation avant d'envoyer la demande."
+          );
+        }
       });
 
       confirmerBtn.addEventListener("click", function () {
-        alert("Les informations ont été envoyées avec succès !");
+        document.getElementById("envoyer-form").submit();
       });
     }
 
@@ -189,6 +133,7 @@ window.addEventListener("load", initSlider);
       checkbox.addEventListener("change", function () {
         var prestBloc = checkbox.closest(".prest-bloc");
         prestBloc.classList.toggle("selected", checkbox.checked);
+        uncheckOtherCheckboxes(checkbox);
         updatePrixTotal();
       });
     });
@@ -198,9 +143,19 @@ window.addEventListener("load", initSlider);
         var checkbox = prestBloc.querySelector(".inp-cbx");
         checkbox.checked = !checkbox.checked;
         prestBloc.classList.toggle("selected", checkbox.checked);
+        uncheckOtherCheckboxes(checkbox);
         updatePrixTotal();
       });
     });
+
+    function uncheckOtherCheckboxes(checkbox) {
+      checkboxes.forEach(function (otherCheckbox) {
+        if (otherCheckbox !== checkbox) {
+          otherCheckbox.checked = false;
+          otherCheckbox.closest(".prest-bloc").classList.remove("selected");
+        }
+      });
+    }
 
     if (filtrePrestParticulier) {
       filtrePrestParticulier.addEventListener("click", function () {
@@ -267,12 +222,13 @@ window.addEventListener("load", initSlider);
         ".extra-prest.prix.total"
       );
       if (prixTotalLeftElement) {
-        prixTotalLeftElement.textContent = "Prix total: " + prixTotal + "€";
+        prixTotalLeftElement.textContent = "Prix : " + prixTotal + "€";
       }
     }
 
     function updatePrixTotal() {
       var prixTotal = 0;
+      var prestationsSelectionnees = [];
 
       checkboxes.forEach(function (checkbox) {
         if (checkbox.checked) {
@@ -282,6 +238,24 @@ window.addEventListener("load", initSlider);
               prestBloc.querySelector(".prix-prest").textContent
             );
             prixTotal += prixPrestation;
+            var description =
+              prestBloc.querySelector(".description-prest").textContent;
+            var prix = prestBloc.querySelector(".prix-prest").textContent;
+            var type = prestBloc.querySelector(".type-prest").textContent;
+            var selectElement = prestBloc.querySelector("#choix");
+            var duree =
+              selectElement.options[selectElement.selectedIndex].textContent;
+            // Ajouter la valeur de l'option sélectionnée
+            var choix =
+              selectElement.options[selectElement.selectedIndex].textContent;
+
+            prestationsSelectionnees.push({
+              description: description,
+              prix: prix,
+              type: type,
+              duree: duree,
+              choix: choix,
+            });
           }
         }
       });
