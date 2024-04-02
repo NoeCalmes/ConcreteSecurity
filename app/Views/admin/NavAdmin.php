@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="list-contrat">
-            <a href="demande" class="navbar">Demandes</a>
+            <a class="navbar">Demandes</a>
             <div class="arrow"></div>
             <div class="contrat-menu">
                 <?php echo anchor('admin/demandes/1/null','Demandes en Attente'); ?>
