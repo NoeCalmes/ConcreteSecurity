@@ -151,7 +151,6 @@ class Admin extends BaseController
 
     public function postAssigner()
     {
-        //var_dump($_POST);
 
         $employe_id = $_POST['employe_id'];
 
@@ -163,7 +162,6 @@ class Admin extends BaseController
 
         $contrat_DateFin = $contrat_modif->datefin;
 
-        print($contrat_modif);
         
         if ($contrat_modif->employe_id != null){
             return $this->getContrats(1, null);
@@ -218,7 +216,10 @@ class Admin extends BaseController
         }
 
         if ($id == 'null'){
-            $data['demande'] =  $data['demandes'][0];
+            if ($data['demandes']->count() == 0){
+            }else{
+                $data['demande'] =  $data['demandes'][0];
+            }
         }else{
             $data['demande'] = Demande::find($id);
         }
@@ -251,6 +252,8 @@ class Admin extends BaseController
 
         $data['employes'] = Employe::all();
 
+        $data['title'] = "Tous Les Employés";
+
 
         $session = session();
         
@@ -264,7 +267,6 @@ class Admin extends BaseController
         
         $data['Name'] = $nom;
 
-        $data['Name'] = $nom;
 
         return view("/header")
             .view('/admin/NavAdmin', $data)

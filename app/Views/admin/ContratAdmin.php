@@ -45,6 +45,7 @@
             if ($contrats->count() == 0){
 
             }else{
+                $contrat = $contrats[0];
                 echo "<tr>";
                     echo "<td width='30%' class='contrat-div'>";
                     echo "<br>";
