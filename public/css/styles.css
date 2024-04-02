@@ -920,19 +920,50 @@ footer .copyright p {
 
 
 .container-demande {
-
     display: flex;
     justify-content: center;
     margin: auto;
     margin-bottom: 60px;
     margin-top: 10px;
-    width: 1115px;
-
+    width: 100%;
 }
 
 /* name container debut */
+
+span#prix-total-informations {
+    font-weight: 700;
+}
+
+.container-informations {
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    width: 1000px;
+    padding: 22px;
+    height: 100%;
+}
+
+.container-informations h3 {
+    font-size: 23px;
+    margin-top: 0;
+}
+
+.container-informations .btn-confirm {
+    margin-top: 25px;
+    background-color: #1c2752;
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.info-saisi {
+    margin-bottom: 10px;
+}
+
 .left-demande {
-    width: 90%;
+    width: 1000px;
     height: 100%;
 }
 
@@ -1178,7 +1209,6 @@ a.extra-men {
 }
 
 
-
 .bloc-input input.input1 {
     margin-right: 25px;
     width: 200px;
@@ -1188,7 +1218,7 @@ a.extra-men {
 
 .bloc-input input.input2 {
     margin-right: 25px;
-    width: 70px;
+    width: 110px;
 }
 
 .bloc-input input.input3 {
@@ -1207,10 +1237,22 @@ a.extra-men {
 
 }
 
+.p-inputtext-separation {
+    margin: 0px 10px 0px 10px;
+
+}
+
+.p-inputtext-separation1 {
+    margin: 0px 10px 0px 0px;
+
+}
+
 .bloc-right-adresse {
     display: flex;
 }
-.nuit-prest , .jour-prest {
+
+.nuit-prest,
+.jour-prest {
     border: 2px solid #1c2752;
     border-radius: 10px;
 }
@@ -1337,3 +1379,6 @@ a.extra-men {
 }
 
 /* CHECKBOX FIN */
+
+/* PAGE panel client DEBUT*/
+/* PAGE panel client FIN*/
