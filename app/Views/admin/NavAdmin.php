@@ -39,11 +39,11 @@
             <a href="demande" class="navbar">Demandes</a>
             <div class="arrow"></div>
             <div class="contrat-menu">
-                <a href="option1">Demandes en Attentes</a>
-                <a href="option2">Demandes Refusées</a>
-                <a href="option3">Demandes Signées</a>
-                <a href="option3">Demandes Acceptée</a>
-                <a href="option3">Demandes En cours</a>
+                <?php echo anchor('admin/demandes/1/null','Demandes en Attente'); ?>
+                <?php echo anchor('admin/demandes/2/null','Demandes Refusées'); ?>
+                <?php echo anchor('admin/demandes/3/null','Demandes Signées'); ?>
+                <?php echo anchor('admin/demandes/4/null','Demandes Acceptée'); ?>
+                <?php echo anchor('admin/demandes/5/null','Demandes En cours'); ?>
             </div>
         </div>
         <div class="list-contrat">

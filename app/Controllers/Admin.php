@@ -10,6 +10,7 @@ use App\Models\Demande;
 use App\Models\Employe;
 use Illuminate\Support\Facades\Date;
 
+
 class Admin extends BaseController
 {
     public function getHome()
@@ -75,6 +76,8 @@ class Admin extends BaseController
         
         $data['Name'] = $nom;
 
+        $data['Identifiant'] = $identifiant;
+
         return view("/header")
             .view('/admin/NavAdmin', $data)
             .view('/admin/ContratAdmin', $data)
@@ -110,11 +113,6 @@ class Admin extends BaseController
             $data['logo'] = '<i class="fa-solid fa-file-circle-check"></i>';
         }
 
-        if ($id == 'null'){
-            $data['contrat'] =  $data['contrats'][0];
-        }else{
-            $data['contrat'] = Contrat::find($id);
-        }
 
 
         
@@ -129,6 +127,21 @@ class Admin extends BaseController
         $nom = $session->get('nom');
         
         $data['Name'] = $nom;
+
+        $data['employee'] = Employe::all();
+
+        if ($data['contrats']->count() == 0){
+            return view("/header")
+            .view('/admin/NavAdmin', $data)
+            .view('/admin/ContratAdmin', $data)
+            .view('/admin/FooterAdmin');
+        }else{
+            if ($id == 'null'){
+                $data['contrat'] =  $data['contrats'][0];
+            }else{
+                $data['contrat'] = Contrat::find($id);
+            }
+        }
 
         return view("/header")
             .view('/admin/NavAdmin', $data)
@@ -136,11 +149,82 @@ class Admin extends BaseController
             .view('/admin/FooterAdmin');
     }
 
+    public function postAssigner()
+    {
+        //var_dump($_POST);
+
+        $employe_id = $_POST['employe_id'];
+
+        $contrat_id = $_POST['contrat_id'];
+
+        $contrat_modif = Contrat::where('id', $contrat_id)->first();
+
+        $contrat_DateDebut = $contrat_modif->datedebut;
+
+        $contrat_DateFin = $contrat_modif->datefin;
+
+        print($contrat_modif);
+        
+        if ($contrat_modif->employe_id != null){
+            return $this->getContrats(1, null);
+        }
+
+        $allcontrat = Contrat::all();
+
+        foreach ($allcontrat as $c){
+            if ($c->employe_id == $employe_id){
+                if ($contrat_DateDebut == $c->datedebut || $contrat_DateFin == $c->datefin){
+                    return $this->getContrats(1, null);
+                }
+            }
+        }
+
+        $contrat_modif->employe_id = $employe_id;
+        $contrat_modif->save();
+
+
+        return $this->getContrats(1, null);
+    }
 
     
 
-    public function getDemande()
+    public function getDemandes($identifiant, $id)
     {
+
+        $data['demandes'] = Demande::all();
+
+        $data['identifiant'] = $identifiant;
+
+        if($identifiant == "1"){
+            $data['title'] = "Demandes En Attentes";
+            $data['demandes'] = Demande::where('etat', "EnAttente")->get();
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
+        }elseif($identifiant == "2"){
+            $data['title'] = "Demandes Refusées";
+            $data['demandes'] = Demande::where('etat', "Refusee")->get();
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
+        }elseif($identifiant == "3"){
+            $data['title'] = "Demandes Signées";
+            $data['demandes'] = Demande::where('etat', "Signee")->get();
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
+        }elseif($identifiant == "4"){
+            $data['title'] = "Demandes Acceptée";
+            $data['demandes'] = Demande::where('etat', "Acceptee")->get();
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
+        }elseif($identifiant == "5"){
+            $data['title'] = "Demandes En Cours";
+            $data['demandes'] = Demande::where('etat', "EnCours")->get();
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
+        }
+
+        if ($id == 'null'){
+            $data['demande'] =  $data['demandes'][0];
+        }else{
+            $data['demande'] = Demande::find($id);
+        }
+
+
+
         $session = session();
         
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
@@ -152,10 +236,11 @@ class Admin extends BaseController
         $nom = $session->get('nom');
         
         $data['Name'] = $nom;
+        
 
         return view("/header")
             .view('/admin/NavAdmin', $data)
-            .view('/admin/DemandeAdmin')
+            .view('/admin/DemandeAdmin', $data)
             .view('/admin/FooterAdmin');
     }
 
@@ -163,6 +248,10 @@ class Admin extends BaseController
 
     public function getEmploye()
     {
+
+        $data['employes'] = Employe::all();
+
+
         $session = session();
         
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
@@ -177,7 +266,7 @@ class Admin extends BaseController
 
         return view("/header")
             .view('/admin/NavAdmin', $data)
-            .view('/admin/EmployeAdmin')
+            .view('/admin/EmployeAdmin', $data)
             .view('/admin/FooterAdmin');
     }
 

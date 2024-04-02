@@ -9,25 +9,32 @@
             <table class =table>
                 <?php
                     $cpt=0;
-                    foreach($contrats as $c){
-
-                        echo '<td class ="Contrat-Number">';
-                            echo '<b>Contrat n°'. $c->id .'</b>';
-                            echo $logo;
-                        echo '</td>';
-                        echo '<td class ="Contrat-Button">';
-                            echo anchor('admin/contrats/'. $identifiant .'/'. $c->id .'','<i class="fa-solid fa-eye"></i>');
-                        echo '</td>';
-
-
-                        $cpt++;
-
-                        if ($cpt%1==0) {
-                            echo "</tr><tr>";
-                        }   
+                    if ($contrats->count() == 0){
+                        echo '<h1> Aucun Contrat de ce type est disponible </h1>';
+                    }else{
+                        foreach($contrats as $c){
+                            echo '<td class ="Contrat-Number-Main">';
+                                echo '<td class ="Contrat-Number">';
+                                    echo '<b>Contrat n°'. $c->id .'</b>';
+                                    echo $logo;
+                                echo '</td>';
+    
+                                echo '<td class ="Contrat-Button">';
+                                    echo anchor('admin/contrats/'. $identifiant .'/'. $c->id .'','<i class="fa-solid fa-eye"></i>');
+                                
+                                echo '</td>';
+                            echo'</td>';
+    
+    
+                            $cpt++;
+    
+                            if ($cpt%1==0) {
+                                echo "</tr><tr>";
+                            }   
+                        }
+                        echo '<tr>';
+                        echo'</tr>';
                     }
-                    echo '<tr>';
-                    echo'</tr>';
                 ?>
             </table>
         </div>
@@ -35,6 +42,9 @@
         <div class = "liste-contrat">
             <table class =table>
             <?php
+            if ($contrats->count() == 0){
+
+            }else{
                 echo "<tr>";
                     echo "<td width='30%' class='contrat-div'>";
                     echo "<br>";
@@ -58,10 +68,22 @@
                         echo " Periode : <b> Nuit </b>";
                     }
                     echo "<br>";
-                    echo '<div class = "icon">';
+                    if ($identifiant == 1) {
+                        echo "Assigner un Employer : ";
+                        echo "<form action='/projets/concretsecurity/admin/assigner' method='post'>";
+                        echo "<select name='employe_id'>";
+                        foreach ($employee as $employe) {
+                            echo "<option value='" . $employe->id . "'>" . $employe->nom . "</option>";
+                        }
+                        echo "</select>";
+                        echo "<input type='hidden' name='contrat_id' value='" . $contrat->id . "'>";
+                        echo "<button type='submit'>Valider</button>";
+                        echo "</form>";
+                    }
                     echo '</div>';
                     echo "</td>";
                 echo "</tr>";
+            }
             ?>
             </table>
         </div>

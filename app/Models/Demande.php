@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Demande extends Model
 {
     public $timestamps = false;
-    protected $table = 'prestations'; // Nom correct de votre table de base de données
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['type', 'description', 'prix', 'periode'];
     public function client() {
         return $this->belongsTo('App\Models\Client');
     }
