@@ -16,6 +16,7 @@ class apropos extends BaseController
         }
 
         return view($navbarView)
+            . view('/header')
             . view('/apropos-view')
             . view('/template/footer');
     }

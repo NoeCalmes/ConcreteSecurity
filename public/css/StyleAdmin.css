@@ -53,21 +53,33 @@
 .header-nav .btn-logout {
     position: absolute;
     top: 25;
-    right: 15;
+    right: 25;
     background-color: #01313f;
     font-size: 20px;
     font-weight: 600;
     color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 200px;
     height: 50px;
+    outline: none;
+    border: none;
     /* Bouton Deconnexion */
 }
 
-
+.Demande-id-List h1 {
+    padding: 10px 12px;
+    background-color: #eae9e9;
+    color: #1c2752;
+    font-size: 22px;
+    border-radius: 5px;
+}
+ 
+.Text-Container {
+    margin-top: 30px;
+}
 
 .nav {
     width: 100%;
@@ -115,14 +127,12 @@ body.paneladmin {
 
 
 
-.container-acceuil .border-title {
-    width: 400px;
-    height: 3px;
-    background-color: #01313f;
-    border-radius: 10px;
-    margin-top: 5px;
-}
 
+.Title h1 {
+    color: #01313f;
+    margin:30px 0px 0px 0px;
+    text-decoration: underline;
+}
 
 
 .container-acceuil .Content {
@@ -177,8 +187,8 @@ body.paneladmin {
 
 /*------------------------------------------------------------------ DEBUT Contrat------------------------------------------------------------------*/
 
-.container-contrat .Title h1 {
-    margin-top: 30px;
+.container-contrat .Title h1  {
+    margin: 30px 0px 0px 40px;
 }
 
 

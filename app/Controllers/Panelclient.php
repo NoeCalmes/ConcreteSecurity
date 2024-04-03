@@ -35,8 +35,8 @@ class Panelclient extends BaseController
 
         $nombreTotalDemandes = Demande::where('client_id', $userId)->count();
         $nombreEnAttente = Demande::where('client_id', $userId)->where('etat', 'EnAttente')->count();
-        $nombreValidees = Demande::where('client_id', $userId)->where('etat', 'Validé')->count();
-        $nombreRefusees = Demande::where('client_id', $userId)->where('etat', 'Refusé')->count();
+        $nombreValidees = Demande::where('client_id', $userId)->where('etat', 'Acceptee')->count();
+        $nombreRefusees = Demande::where('client_id', $userId)->where('etat', 'Refusee')->count();
         $nombreEnCours = Demande::where('client_id', $userId)->where('etat', 'EnCours')->count();
 
         // Parcourir toutes les demandes
@@ -89,7 +89,7 @@ class Panelclient extends BaseController
             }
 
             // Si la demande est validée, l'ajouter également aux données spécifiques des demandes validées
-            if ($demande->etat === 'Validé') {
+            if ($demande->etat === 'Acceptee') {
                 $dataValide[] = [
                     'demande' => $demande,
                     'prestations' => $prestationsDetails,
@@ -98,7 +98,7 @@ class Panelclient extends BaseController
             }
 
             // Si la demande est refusée, l'ajouter également aux données spécifiques des demandes refusées
-            if ($demande->etat === 'Refusé') {
+            if ($demande->etat === 'Refusee') {
                 $dataRefusee[] = [
                     'demande' => $demande,
                     'prestations' => $prestationsDetails,

@@ -16,7 +16,7 @@ class Admin extends BaseController
     public function getHome()
     {
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -24,16 +24,16 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/MainAdmin')
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/MainAdmin')
+            . view('/admin/FooterAdmin');
     }
 
-   
+
     public function getContrat($identifiant)
     {
         //$identifiant = $this->request->getPost('contratChoice');
@@ -44,28 +44,28 @@ class Admin extends BaseController
 
         $data['contrats'] = Contrat::all();
 
-        if($identifiant == "1"){
+        if ($identifiant == "1") {
             $data['title'] = "Contrats en Attente";
             $data['contrats'] = Contrat::where('employe_id', NULL)->get();
             $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
-        }else if($identifiant == '2'){
+        } else if ($identifiant == '2') {
             $data['title'] = "Contrats Assignés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '>=', $data['date'])
-            ->get();
+                ->whereDate('datefin', '>=', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-sheet-plastic"></i>';
-        }else if($identifiant == '3'){
+        } else if ($identifiant == '3') {
             $data['title'] = "Contrats Terminés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '<', $data['date'])
-            ->get();
+                ->whereDate('datefin', '<', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-file-circle-check"></i>';
         }
-        
+
 
 
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -73,20 +73,21 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         $data['Identifiant'] = $identifiant;
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin', $data)
-            .view('/admin/FooterAdmin');
-    
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/ContratAdmin', $data)
+            . view('/admin/FooterAdmin');
+
     }
 
 
-    public function getContrats($identifiant, $id){
+    public function getContrats($identifiant, $id)
+    {
 
         $data['date'] = Date::now()->format('Y-m-d');
 
@@ -95,29 +96,29 @@ class Admin extends BaseController
         $data['identifiant'] = $identifiant;
 
 
-        if($identifiant == "1"){
+        if ($identifiant == "1") {
             $data['title'] = "Contrats en Attente";
             $data['contrats'] = Contrat::where('employe_id', NULL)->get();
             $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
-        }else if($identifiant == '2'){
+        } else if ($identifiant == '2') {
             $data['title'] = "Contrats Assignés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '>=', $data['date'])
-            ->get();
+                ->whereDate('datefin', '>=', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-sheet-plastic"></i>';
-        }else if($identifiant == '3'){
+        } else if ($identifiant == '3') {
             $data['title'] = "Contrats Terminés";
             $data['contrats'] = Contrat::whereNotNull('employe_id')
-            ->whereDate('datefin', '<', $data['date'])
-            ->get();
+                ->whereDate('datefin', '<', $data['date'])
+                ->get();
             $data['logo'] = '<i class="fa-solid fa-file-circle-check"></i>';
         }
 
 
 
-        
+
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -125,28 +126,28 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
         $data['employee'] = Employe::all();
 
-        if ($data['contrats']->count() == 0){
+        if ($data['contrats']->count() == 0) {
             return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin', $data)
-            .view('/admin/FooterAdmin');
-        }else{
-            if ($id == 'null'){
-                $data['contrat'] =  $data['contrats'][0];
-            }else{
+                . view('/admin/NavAdmin', $data)
+                . view('/admin/ContratAdmin', $data)
+                . view('/admin/FooterAdmin');
+        } else {
+            if ($id == 'null') {
+                $data['contrat'] = $data['contrats'][0];
+            } else {
                 $data['contrat'] = Contrat::find($id);
             }
         }
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/ContratAdmin', $data)
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/ContratAdmin', $data)
+            . view('/admin/FooterAdmin');
     }
 
     public function postAssigner()
@@ -162,16 +163,16 @@ class Admin extends BaseController
 
         $contrat_DateFin = $contrat_modif->datefin;
 
-        
-        if ($contrat_modif->employe_id != null){
+
+        if ($contrat_modif->employe_id != null) {
             return $this->getContrats(1, null);
         }
 
         $allcontrat = Contrat::all();
 
-        foreach ($allcontrat as $c){
-            if ($c->employe_id == $employe_id){
-                if ($contrat_DateDebut == $c->datedebut || $contrat_DateFin == $c->datefin){
+        foreach ($allcontrat as $c) {
+            if ($c->employe_id == $employe_id) {
+                if ($contrat_DateDebut == $c->datedebut || $contrat_DateFin == $c->datefin) {
                     return $this->getContrats(1, null);
                 }
             }
@@ -184,66 +185,56 @@ class Admin extends BaseController
         return $this->getContrats(1, null);
     }
 
-    
-
     public function getDemandes($identifiant, $id)
     {
-
-        $data['demandes'] = Demande::all();
-
         $data['identifiant'] = $identifiant;
 
-        if($identifiant == "1"){
+        // Récupérer les demandes en fonction de l'identifiant
+        if ($identifiant == "1") {
             $data['title'] = "Demandes En Attentes";
             $data['demandes'] = Demande::where('etat', "EnAttente")->get();
             $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>';
-        }elseif($identifiant == "2"){
+        } elseif ($identifiant == "2") {
             $data['title'] = "Demandes Refusées";
             $data['demandes'] = Demande::where('etat', "Refusee")->get();
-            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
-        }elseif($identifiant == "3"){
-            $data['title'] = "Demandes Signées";
-            $data['demandes'] = Demande::where('etat', "Signee")->get();
-            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
-        }elseif($identifiant == "4"){
-            $data['title'] = "Demandes Acceptée";
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; // Logo à Changer !
+        } elseif ($identifiant == "4") {
+            $data['title'] = "Demandes Acceptées";
             $data['demandes'] = Demande::where('etat', "Acceptee")->get();
-            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
-        }elseif($identifiant == "5"){
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; // Logo à Changer !
+        } elseif ($identifiant == "5") {
             $data['title'] = "Demandes En Cours";
             $data['demandes'] = Demande::where('etat', "EnCours")->get();
-            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; //Logo à Changer !
+            $data['logo'] = '<i class="fa-regular fa-hourglass-half"></i>'; // Logo à Changer !
         }
 
-        if ($id == 'null'){
-            if ($data['demandes']->count() == 0){
-            }else{
-                $data['demande'] =  $data['demandes'][0];
+        // Vérifier si l'ID est 'null' pour récupérer la première demande
+        if ($id == 'null') {
+            if ($data['demandes']->count() > 0) {
+                $data['demande'] = $data['demandes'][0];
             }
-        }else{
+        } else {
+            // Sinon, récupérer la demande par son ID
             $data['demande'] = Demande::find($id);
         }
 
-
-
         $session = session();
-        
-        // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
+
+        // Vérifiez si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
-            return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
+            return redirect()->to('/'); // Rediriger vers la page d'accueil si l'admin n'est pas connecté
         }
 
-        // Récupérez le nom de l'admin depuis la session
+        // Récupérer le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
         $data['Name'] = $nom;
-        
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/DemandeAdmin', $data)
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/DemandeAdmin', $data)
+            . view('/admin/FooterAdmin');
     }
+
 
 
 
@@ -256,7 +247,7 @@ class Admin extends BaseController
 
 
         $session = session();
-        
+
         // Vérifiez d'abord si l'utilisateur est connecté en tant qu'admin
         if (!$session->has('admin') || !$session->admin) {
             return redirect()->to('/'); // Rediriger vers la page d'accueil ou une autre page si l'admin n'est pas connecté
@@ -264,14 +255,68 @@ class Admin extends BaseController
 
         // Récupérez le nom de l'admin depuis la session
         $nom = $session->get('nom');
-        
+
         $data['Name'] = $nom;
 
 
         return view("/header")
-            .view('/admin/NavAdmin', $data)
-            .view('/admin/EmployeAdmin', $data)
-            .view('/admin/FooterAdmin');
+            . view('/admin/NavAdmin', $data)
+            . view('/admin/EmployeAdmin', $data)
+            . view('/admin/FooterAdmin');
+    }
+    public function postvalidedemande()
+    {
+        $demandeIdAcceptee = request()->getPost('demandeIdAccepte');
+    
+        // Vérifier si l'identifiant de la demande acceptée existe
+        if ($demandeIdAcceptee) {
+            // Trouver la demande dans la base de données
+            $demande = Demande::find($demandeIdAcceptee);
+    
+            // Vérifier si la demande existe et si son état est "EnAttente"
+            if ($demande && $demande->etat === 'EnAttente') {
+                $demande->etat = 'Acceptee';
+                $demande->save();
+    
+                // Redirection vers la page admin/demandes/1/null
+                return redirect()->to('/admin/demandes/1/null');
+            } else {
+             
+                return redirect()->to('/admin/demandes/1/null');
+            }
+        } else {
+            // Gérer le cas où l'identifiant de la demande acceptée n'est pas disponible dans les données postées
+            // Peut-être afficher un message d'erreur ou rediriger vers une autre page
+            return redirect()->to('/admin/demandes/1/null');
+        }
+    }
+    
+
+    public function postrefusedemande()
+    {
+        $demandeIdAcceptee = request()->getPost('demandeIdRefuse');
+    
+        // Vérifier si l'identifiant de la demande acceptée existe
+        if ($demandeIdAcceptee) {
+            // Trouver la demande dans la base de données
+            $demande = Demande::find($demandeIdAcceptee);
+    
+            // Vérifier si la demande existe et si son état est "EnAttente"
+            if ($demande && $demande->etat === 'EnAttente') {
+                $demande->etat = 'Refusee';
+                $demande->save();
+    
+                // Redirection vers la page admin/demandes/1/null
+                return redirect()->to('/admin/demandes/1/null');
+            } else {
+             
+                return redirect()->to('/admin/demandes/1/null');
+            }
+        } else {
+            // Gérer le cas où l'identifiant de la demande acceptée n'est pas disponible dans les données postées
+            // Peut-être afficher un message d'erreur ou rediriger vers une autre page
+            return redirect()->to('/admin/demandes/1/null');
+        }
     }
 
 

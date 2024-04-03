@@ -2,7 +2,6 @@
     <div class="container-contrat">
         <div class="Title">
             <h1><?php echo $title ?></h1>
-            <div class="border-title"></div>
         </div>
 
         <div class ="Employe-id-List">

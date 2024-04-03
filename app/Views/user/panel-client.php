@@ -32,14 +32,14 @@
                 </p>
             </div>
             <div class="onglet">
-                <p class="p-panel">Validée
+                <p class="p-panel">Acceptée
                     <span>
                         <?php echo $nombreValidees; ?>
                     </span>
                 </p>
             </div>
             <div class="onglet">
-                <p class="p-panel">Refusé
+                <p class="p-panel">Refusée
                     <span>
                         <?php echo $nombreRefusees; ?>
                     </span>
@@ -66,9 +66,9 @@
                         <?php
                         if ($demandeInfo['demande']->etat === 'EnAttente') {
                             echo 'orange';
-                        } elseif ($demandeInfo['demande']->etat === 'Validé') {
-                            echo '#349f30';
-                        } elseif ($demandeInfo['demande']->etat === 'Refusé') {
+                        } elseif ($demandeInfo['demande']->etat === 'Acceptee') {
+                            echo '#17be69';
+                        } elseif ($demandeInfo['demande']->etat === 'Refusee') {
                             echo '#c73320';
                         } elseif ($demandeInfo['demande']->etat === 'EnCours') {
                             echo '#58A3F7';
@@ -98,11 +98,18 @@
                                     au
                                     <span>
                                         <?php echo $prestation['date_fin'] ?>
+                                        <?php
+                                        // Affichage de la période en fonction de sa valeur
+                                        if ($prestation['periode'] == 1) {
+                                            echo "la Journée";
+                                        } elseif ($prestation['periode'] == 2) {
+                                            echo "la Nuit";
+                                        }
+                                        ?>
                                     </span>
                                 </li>
                                 <li>Prestation :
                                     <?php echo $prestation['description'] ?>
-
                                 </li>
                                 <li>Adresse :
                                     <?php echo $prestation['adresse'] ?> ,
@@ -110,6 +117,7 @@
                                     <?php echo $prestation['ville'] ?>
                                 </li>
                             <?php endforeach; ?>
+
                         </ul>
                     </div>
                 <?php endforeach; ?>
@@ -117,7 +125,7 @@
         </div>
 
         <div class="contenu">
-            <h3 class="h3-demande">Vos demandes en Attente <span>(Vous aurez une réponse très bientot ...)</span></h3>
+            <h3 class="h3-demande">Vos demandes en Attentes <span>(Vous aurez une réponse très bientot ...)</span></h3>
             <?php if (empty($dataEnAttente)): ?>
                 <p>Aucune demande en attente pour le moment...</p>
             <?php else: ?>
@@ -141,6 +149,15 @@
                                     au
                                     <span>
                                         <?php echo $prestation['date_fin'] ?>
+                                        <?php
+                                        // Affichage de la période en fonction de sa valeur
+                                        if ($prestation['periode'] == 1) {
+                                            echo "la Journée";
+                                        } elseif ($prestation['periode'] == 2) {
+                                            echo "la Nuit";
+                                        }
+                                        ?>
+
                                     </span>
                                 </li>
                                 <li>Prestation :
@@ -160,7 +177,7 @@
         </div>
 
         <div class="contenu">
-            <h3 class="h3-demande">Vos demandes Validées <span>(Dans l'attente de votre paiement )</span></h3>
+            <h3 class="h3-demande">Vos demandes Acceptées <span>(Dans l'attente de votre paiement )</span></h3>
             <?php if (empty($dataValide)): ?>
                 <p>Aucune demande validée pour le moment...</p>
             <?php else: ?>
@@ -184,6 +201,14 @@
                                     au
                                     <span>
                                         <?php echo $prestation['date_fin'] ?>
+                                        <?php
+                                        // Affichage de la période en fonction de sa valeur
+                                        if ($prestation['periode'] == 1) {
+                                            echo "la Journée";
+                                        } elseif ($prestation['periode'] == 2) {
+                                            echo "la Nuit";
+                                        }
+                                        ?>
                                     </span>
                                 </li>
                                 <li>Prestation :
@@ -236,6 +261,14 @@
                                     au
                                     <span>
                                         <?php echo $prestation['date_fin'] ?>
+                                        <?php
+                                        // Affichage de la période en fonction de sa valeur
+                                        if ($prestation['periode'] == 1) {
+                                            echo "la Journée";
+                                        } elseif ($prestation['periode'] == 2) {
+                                            echo "la Nuit";
+                                        }
+                                        ?>
                                     </span>
                                 </li>
                                 <li>Prestation :
@@ -256,21 +289,14 @@
 
 
         <div class="contenu">
-            <h3 class="h3-demande">Vos demandes en Cours <span>(Plus pour longtemps , nos agents de sécurité sont sur le point d'arriver)</span></h3>
+            <h3 class="h3-demande">Vos demandes en Cours <span>(Plus pour longtemps , nos agents de sécurité sont sur le
+                    point d'arriver)</span></h3>
             <?php if (empty($dataEnCours)): ?>
                 <p>Aucune demande en cours pour le moment...</p>
             <?php else: ?>
                 <?php foreach ($dataEnCours as $demandeInfo): ?>
                     <div class="tous-demande">
-                        <div class="tous-first">
-                            <p>Prix:
-                                <?php echo $demandeInfo['prixTotal'] ?>€
-                            </p>
-                            <p class="date-dem">Date demande :
-                                <?php echo $demandeInfo['demande']->dated ?>
-                            </p>
-                        </div>
-                        <div class="line-tous"></div>
+
                         <div>
                             <?php foreach ($demandeInfo['prestations'] as $prestation): ?>
                                 <li class="date_li">Du
@@ -280,6 +306,14 @@
                                     au
                                     <span>
                                         <?php echo $prestation['date_fin'] ?>
+                                        <?php
+                                        // Affichage de la période en fonction de sa valeur
+                                        if ($prestation['periode'] == 1) {
+                                            echo "la Journée";
+                                        } elseif ($prestation['periode'] == 2) {
+                                            echo "la Nuit";
+                                        }
+                                        ?>
                                     </span>
                                 </li>
                                 <li>Prestation :
@@ -292,6 +326,7 @@
                                     <?php echo $prestation['ville'] ?>
                                 </li>
                             <?php endforeach; ?>
+                            <div class="line-encours"></div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -394,8 +429,6 @@
 
     }
 
-
-
     .line-tous {
         margin: 0px 20px 0px 40px;
         width: 1.5px;
@@ -416,7 +449,7 @@
         padding: 3px 10px;
         width: 1000px;
         background-color: red;
-        border-radius: 15px;
+        border-radius: 3px;
     }
 
     .date_li span {
@@ -438,6 +471,13 @@
         cursor: pointer;
         transition: background-color 0.2s;
         border-radius: 2px;
+    }
+
+    .line-encours {
+        width: 300px;
+        height: 1px;
+        background-color: black;
+        margin: 10px 0px 10px 0px;
     }
 </style>
 

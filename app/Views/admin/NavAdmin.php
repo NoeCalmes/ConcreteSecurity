@@ -13,41 +13,45 @@
     <div class="header-nav">
         <img src="<?= base_url('public/img/acceuil/logocr.png') ?>" alt="" class="logo" id="logo">
         <div class="border"></div>
-        <h1> Bienvenue sur L'admin Panel , <?php echo $Name  ?> !</h1>
+        <h1> Bienvenue sur L'admin Panel ,
+            <?php echo $Name ?> !
+        </h1>
         <div href="useradminctrl/adminlogout" class="btn-logout">
             <i class="fa-solid fa-power-off"></i>
-            <a class="navbar"><?php echo anchor('useradminctrl/adminlogout', 'Déconnexion') ?></a>
+            <a class="navbar">
+                <?php echo anchor('useradminctrl/adminlogout', 'Déconnexion') ?>
+            </a>
         </div>
-        
-        
+
+
     </div>
 
     <div class="nav">
         <div class="list-contrat">
-            <?php echo anchor('admin/home','Acceuil'); ?>
+            <?php echo anchor('admin/home', 'Acceuil'); ?>
         </div>
         <div class="list-contrat">
             <a class="navbar">Contrat</a>
             <div class="arrow"></div>
             <div class="contrat-menu">
-                <?php echo anchor('admin/contrats/1/null','Contrats en Attente'); ?>
-                <?php echo anchor('admin/contrats/2/null','Contrats Assignés'); ?>
-                <?php echo anchor('admin/contrats/3/null','Contrats Terminés'); ?>
+                <?php echo anchor('admin/contrats/1/null', 'Contrats en Attente'); ?>
+                <?php echo anchor('admin/contrats/2/null', 'Contrats Assignés'); ?>
+                <?php echo anchor('admin/contrats/3/null', 'Contrats Terminés'); ?>
             </div>
         </div>
         <div class="list-contrat">
             <a class="navbar">Demandes</a>
             <div class="arrow"></div>
             <div class="contrat-menu">
-                <?php echo anchor('admin/demandes/1/null','Demandes en Attente'); ?>
-                <?php echo anchor('admin/demandes/2/null','Demandes Refusées'); ?>
-                <?php echo anchor('admin/demandes/3/null','Demandes Signées'); ?>
-                <?php echo anchor('admin/demandes/4/null','Demandes Acceptée'); ?>
-                <?php echo anchor('admin/demandes/5/null','Demandes En cours'); ?>
+                <?php echo anchor('admin/demandes/1/null', 'Demandes en Attente'); ?>
+                <?php echo anchor('admin/demandes/2/null', 'Demandes Refusées'); ?>
+                <!--    <?php echo anchor('admin/demandes/3/null', 'Demandes Signées'); ?> -->
+                <?php echo anchor('admin/demandes/4/null', 'Demandes Acceptée'); ?>
+                <?php echo anchor('admin/demandes/5/null', 'Demandes En cours'); ?>
             </div>
         </div>
         <div class="list-contrat">
-            <?php echo anchor('admin/employe','Employés'); ?>
+            <?php echo anchor('admin/employe', 'Employés'); ?>
         </div>
     </div>
 
@@ -55,7 +59,7 @@
 
 
 <style>
-       
+
 
 
 </style>
