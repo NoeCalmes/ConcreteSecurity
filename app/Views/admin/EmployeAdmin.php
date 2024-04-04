@@ -14,7 +14,15 @@
                         foreach($employes as $e){
                             echo '<td class ="Contrat-Number-Main">';
                                 echo '<td class ="Contrat-Number">';
+                                    echo'<br>';
                                     echo '<b>Employer n° '. $e->id .'</b>';
+                                    echo'<br>';
+                                    echo '<b>Nom : '. $e->nom .'</b>';
+                                    echo'<br>';
+                                    echo '<b>Prenom : '. $e->prenom .'</b>';
+                                    echo'<br>';
+                                    echo '<b>Identifiant : '. $e->numidentifiant .'</b>';
+                                    echo'<br>';
                                 echo '</td>';
                             echo'</td>';
     
