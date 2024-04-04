@@ -35,7 +35,7 @@
             <section class='boutonbottom'>
                 <a href="<?= base_url('') ?>">ACCEUIL</a>
                 <a href="<?= base_url('apropos') ?>">A PROPOS</a>
-                <a href="<?= base_url('') ?>">MENTION LEGALES</a>
+                <a href="<?= base_url('mentionlegales') ?>">MENTION LEGALES</a>
                 <a href="<?= base_url('useradminctrl') ?>">PANNEL ADMIN</a>
                 <a href="<?= base_url('contact') ?>">CONTACT</a>
             </section>
