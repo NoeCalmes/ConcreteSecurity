@@ -17,7 +17,7 @@ Le souhait du projet est d'améliorer la réactivité, la précision et la satis
 
 ### Dossier de Programmation + explication des étapes de création du site
 
-Pour en savoir plus sur le développement de cette application → [noecalmes.fr](http://noecalmes.fr/concretesecurity).
+Pour en savoir plus sur le développement de cette application : [noecalmes.fr](http://noecalmes.fr/concretesecurity).
 
 ![Concrete Security](https://github.com/NoeCalmes/concretsecurity/assets/68471197/77d1bfcd-d855-446e-92aa-0714e9502ed1)
 
