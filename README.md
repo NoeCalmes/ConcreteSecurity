@@ -4,16 +4,16 @@ L'objectif principal de ce projet est de développer un système informatisé pe
 
 Le souhait du projet et d'améliorer la réactivité, la précision et la satisfaction des clients en passant d'une gestion manuelle à une gestion numérique et de permettre à l'entreprise de répondre de manière plus efficace aux besoins de ses clients et de rester compétitive sur le marché de la sécurité.
 
-Technologies utilisées :
+### Technologies utilisées :
 💻 PHP
 🛠️ Framework CodeIgniter
 📦 ORM Eloquent de Laravel
 
-Le code source de ce projet est disponible sur [GitHub](https://github.com/NoeCalmes/concretsecurity).
+✔️ Code source Disponible
 
 ## Dossier de Programmation + explication des étapes de création du site
 
-Pour en savoir plus sur le développement de ce site, veuillez consulter [noecalmes.fr](http://noecalmes.fr/concretesecurity).
+Pour en savoir plus sur le développement de ce site → [noecalmes.fr](http://noecalmes.fr/concretesecurity).
 
 ![concretesecurity](https://github.com/NoeCalmes/concretsecurity/assets/68471197/77d1bfcd-d855-446e-92aa-0714e9502ed1)
 
