@@ -1,23 +1,22 @@
 ## Concrete Security
 
-Le projet "Concrete Security" est une application web développée dans le cadre de `mon projet d'étude`. Il vise à moderniser les processus d'une entreprise fictive spécialisée dans la surveillance et la sécurité.
+The project "Concrete Security" is a web application developed as part of `my study project`. It aims to modernize the processes of a fictional company specializing in surveillance and security.
 
-### Objectif
+### Objective
 
-L'objectif principal de ce projet est de `développer un système informatisé permettant de gérer efficacement les demandes de services en ligne`. Les clients pourront soumettre leurs demandes via un formulaire en ligne, les personnaliser selon leurs besoins, et suivre l'évolution de leurs contrats avec l'entreprise. Les administrateurs auront accès à un tableau de bord pour gérer les demandes et attribuer les contrats aux employés qualifiés de l'agence.
+The main objective of this project is to `develop a computerized system to efficiently manage online service requests`. Clients will be able to submit their requests via an online form, customize them according to their needs, and track the progress of their contracts with the company. Administrators will have access to a dashboard to manage requests and assign contracts to qualified agency employees.
 
-Le souhait du projet est `d'améliorer la réactivité, la précision et la satisfaction des clients` en passant d'une gestion manuelle à une gestion numérique, ainsi que de permettre à l'entreprise de répondre de manière plus efficace aux besoins de ses clients et de rester compétitive sur le marché de la sécurité.
+The project's goal is `to improve client responsiveness, accuracy, and satisfaction` by transitioning from manual to digital management, as well as enabling the company to respond more effectively to client needs and remain competitive in the security market.
 
-### Technologies utilisées
+### Technologies Used
 
 - 💻 PHP
-- 🛠️ Framework CodeIgniter
-- 📦 ORM Eloquent de Laravel
-#### ✔️ Code source disponible 
+- 🛠️ CodeIgniter Framework
+- 📦 Eloquent ORM from Laravel
+#### ✔️ Source Code Available
 
-### Dossier de Programmation + explication des étapes de création du site
+### Programming Folder + Explanation of Site Creation Steps
 
-Pour en savoir plus sur le développement de cette application : [noecalmes.fr](http://noecalmes.fr/concretesecurity).
+To learn more about the development of this application, visit [noecalmes.fr](http://noecalmes.fr/concretesecurity).
 
 ![Concrete Security](https://github.com/NoeCalmes/concretsecurity/assets/68471197/77d1bfcd-d855-446e-92aa-0714e9502ed1)
-
