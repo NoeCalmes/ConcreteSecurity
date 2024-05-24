@@ -8,9 +8,10 @@
     </title>
 </head>
 
-<body>
-    <a class="retour-accueil" href="<?php echo("/concretsecurity")?>">Retour à l'Accueil</a>
-    <a target="_blank" href="https://codepen.io/uiswarup/pen/XWGGyWQ">
+<body>	
+	<?php echo anchor('/','Retour à l\'Accueil','class="retour-accueil"'); ?>
+    
+	<a target="_blank" href="https://codepen.io/uiswarup/pen/XWGGyWQ">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 mt-5 mb-5">

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class contact extends BaseController
+class Contact extends BaseController
 {
     public function getindex(): string
     {

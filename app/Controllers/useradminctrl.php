@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 use App\Models\Useradmin;
 
-class useradminctrl extends BaseController
+class Useradminctrl extends BaseController
 {
-    public function getindex(): string
+    public function getIndex(): string
     {
         return view('/admin/login-admin');
     }

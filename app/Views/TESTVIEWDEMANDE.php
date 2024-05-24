@@ -9,12 +9,12 @@
                     <?php
                     $cpt = 0;
                     if ($demandes->count() == 0) {
-                        
+                        echo "<h1 class='NoContrat'> Aucune demande de ce type n'est disponible </h1>";
                     } else {
                         foreach ($demandes as $d) {
                             echo '<li class ="Contrat-Number-Main">';
                             echo '<div class ="Contrat-Number">';
-                            echo '<b>Demande n°' . $d->id . '</b>';
+                            echo '<b>Contrat n°' . $d->id . '</b>';
                             echo '</div>';
 
                             echo '<div class ="Contrat-Button">';
@@ -39,7 +39,7 @@
                     use App\Models\Employe;
 
                     if ($demandes->count() == 0) {
-                        echo "<h1 class='NoContrat'> Aucune demande de ce type n'est disponible </h1>";
+
                     } else {
                         echo "<tr>";
                         echo "<td width='30%' class='contrat-div'>";
@@ -49,7 +49,7 @@
                         } else {
                             echo "<h2> Demande N° <b>" . $demande->id . "</b></h2>";
                             echo "<br>";
-                            echo " <p>Date de Création : <b>" . $demande->dated . "</b></p>";
+                            echo " <p>Date Début : <b>" . $demande->dated . "</b></p>";
                             echo "<br>";
                             echo " <p>Etat : <b>" . $demande->etat . "</b></p>";
                             echo "<br>";
@@ -58,28 +58,27 @@
                             echo "<br>";
 
                             // Affichage des informations de pivot
-                            echo "<p class='InfoTitle'>Informations de la demande</p>";
+                            echo "<b>Informations de la demande :</b>";
                             echo "<br>";
-                            echo "<div class = 'InformationDemande'>";
                             foreach ($demande->prestations as $prestation) {
                                 echo "<br>";
-                                echo "<p class='InfoFormText'>Date début  <b>" . $prestation->pivot->date_debut . "</b></p>";
+                                echo "Date début : <b>" . $prestation->pivot->date_debut . "</b>";
                                 echo "<br>";
-                                echo "<p>Date fin <b>" . $prestation->pivot->date_fin . "</b></p>";
+                                echo "Date fin : <b>" . $prestation->pivot->date_fin . "</b>";
                                 echo "<br>";
-                                echo "<p class='InfoFormText'> Adresse <b>" . $prestation->pivot->adresse . "</b></p>";
+                                echo "Adresse : <b>" . $prestation->pivot->adresse . "</b>";
                                 echo "<br>";
-                                echo "<p class='InfoFormText'> Ville <b>" . $prestation->pivot->ville . "</b></p>";
+                                echo "Ville : <b>" . $prestation->pivot->ville . "</b>";
                                 echo "<br>";
-                                echo "<p class='InfoFormText'> Code postal <b>" . $prestation->pivot->cp . "</b></p>";
+                                echo "Code postal : <b>" . $prestation->pivot->cp . "</b>";
                                 echo "<br>";
-                                echo "<p class='InfoFormText'> Période <b>";
+                                echo "Période : <b>";
                                 if ($prestation->pivot->periode == 1) {
                                     echo "Journée";
                                 } elseif ($prestation->pivot->periode == 2) {
                                     echo "Nuit";
                                 }
-                                echo "</b></p>";
+                                echo "</b>";
                                 echo "<br>";
 
                                 // Ajout des boutons Accepté et Refusé
@@ -102,7 +101,6 @@
                             }
                             echo "</td>";
                             echo "</tr>";
-                            echo "</div class = 'InformationDemande'>";
                         }
                     }
                     ?>
@@ -112,3 +110,45 @@
 
         </.>
 </body>
+
+
+
+<style>
+    .boutons-container {
+        display: flex;
+    }
+
+    .bouton-accepte {
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        width: 110px;
+        height: 30px;
+        background-color: #c73320;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+
+    }
+
+    .bouton-refuse {
+        margin-left: 5px;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        width: 110px;
+        height: 30px;
+        background-color: #17be69;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+    }
+</style>

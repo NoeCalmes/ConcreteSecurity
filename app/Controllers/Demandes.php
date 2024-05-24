@@ -9,7 +9,7 @@ use App\Models\Demande;
 
 class Demandes extends BaseController
 {
-    public function getindex()
+    public function getIndex()
     {
         $session = session();
 

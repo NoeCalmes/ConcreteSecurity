@@ -2,11 +2,12 @@
 
 namespace App\Controllers;
 
-class apropos extends BaseController
+class Apropos extends BaseController
 {
 
     public function getIndex(): string
     {
+        
         $navbarView = 'template/navbar';
 
         // Vérifier si l'utilisateur est connecté en tant que client

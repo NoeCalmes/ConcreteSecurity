@@ -234,16 +234,20 @@ class Admin extends BaseController
             . view('/admin/DemandeAdmin', $data)
             . view('/admin/FooterAdmin');
     }
-
-
-
-
     public function getEmploye()
     {
+
+        $data['date'] = Date::now()->format('Y-m-d');
 
         $data['employes'] = Employe::all();
 
         $data['title'] = "Tous Les Employés";
+
+        $data['employes_contrat'] = Contrat::whereNotNull('employe_id')
+            ->whereDate('datefin', '>', $data['date'])
+            ->get();
+
+
 
 
         $session = session();
@@ -264,24 +268,24 @@ class Admin extends BaseController
             . view('/admin/EmployeAdmin', $data)
             . view('/admin/FooterAdmin');
     }
-    public function postvalidedemande()
+    public function postValidedemande()
     {
         $demandeIdAcceptee = request()->getPost('demandeIdAccepte');
-    
+
         // Vérifier si l'identifiant de la demande acceptée existe
         if ($demandeIdAcceptee) {
             // Trouver la demande dans la base de données
             $demande = Demande::find($demandeIdAcceptee);
-    
+
             // Vérifier si la demande existe et si son état est "EnAttente"
             if ($demande && $demande->etat === 'EnAttente') {
                 $demande->etat = 'Acceptee';
                 $demande->save();
-    
+
                 // Redirection vers la page admin/demandes/1/null
                 return redirect()->to('/admin/demandes/1/null');
             } else {
-             
+
                 return redirect()->to('/admin/demandes/1/null');
             }
         } else {
@@ -290,26 +294,26 @@ class Admin extends BaseController
             return redirect()->to('/admin/demandes/1/null');
         }
     }
-    
 
-    public function postrefusedemande()
+
+    public function postRefusedemande()
     {
-        $demandeIdAcceptee = request()->getPost('demandeIdRefuse');
-    
+        $demandeIdRefusee = request()->getPost('demandeIdRefuse');
+
         // Vérifier si l'identifiant de la demande acceptée existe
-        if ($demandeIdAcceptee) {
+        if ($demandeIdRefusee) {
             // Trouver la demande dans la base de données
-            $demande = Demande::find($demandeIdAcceptee);
-    
+            $demande = Demande::find($demandeIdRefusee);
+
             // Vérifier si la demande existe et si son état est "EnAttente"
             if ($demande && $demande->etat === 'EnAttente') {
                 $demande->etat = 'Refusee';
                 $demande->save();
-    
+
                 // Redirection vers la page admin/demandes/1/null
                 return redirect()->to('/admin/demandes/1/null');
             } else {
-             
+
                 return redirect()->to('/admin/demandes/1/null');
             }
         } else {

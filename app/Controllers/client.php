@@ -4,7 +4,7 @@ namespace App\Controllers;
 class Client extends BaseController
 {
      
-    public function getpannel()
+    public function getPannel()
     {
         $navbarView = 'template/navbar';
 

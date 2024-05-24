@@ -17,7 +17,7 @@
             </div>
         </div>
         <a href="<?= base_url('user') ?>" class="absolute"><img class="account"
-                src="<?= base_url('public/img/acceuil/account.svg') ?>" alt="" " ></a>
+                src="<?= base_url('public/img/acceuil/account.svg') ?>" alt=""  ></a>
     </div>
 </header>
 

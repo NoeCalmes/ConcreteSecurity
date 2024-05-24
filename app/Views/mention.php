@@ -31,9 +31,12 @@
         <p>Le Site est accessible en tout endroit, 7j/7, 24h/24 sauf cas de force majeure, interruption programmée ou
             non et
             pouvant découler d’une nécessité de maintenance.
-            La collecte des données personnelles comprend les informations suivantes : mail, nom, prénom, adresse
-            postale, ville, code postal, dans le cadre de la création d'une demande.
+            <br><span>La collecte des données personnelles</span> comprend les informations suivantes : <span>mail, nom,
+                prénom adresse
+                postale, ville, code postal,</span> dans le cadre de la création d'une demande et de creation de votres
+            compte.
         <p>
+            <br>
     </div>
 </body>
 
@@ -49,6 +52,10 @@
         color: #1c2752;
         margin-bottom: 10px;
 
+    }
+
+    .mention-legales p span {
+        text-decoration: underline;
     }
 
     .mention-legales p {
